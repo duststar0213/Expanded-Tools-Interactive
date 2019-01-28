@@ -5,7 +5,7 @@
     Result
     EDIT ON
     /* Google Fonts */
-    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
     /* Global */
     html {
         min-height: 100%;
@@ -16,7 +16,7 @@
         height: calc(100vh - 8em);
         padding: 4em;
         color: rgba(0,0,0,.75);
-        font-family: 'Anonymous Pro', monospace;
+        font-family: 'Montserrat', sans-serif;
         background-color: rgb(25,25,25);
     }
 
@@ -108,7 +108,17 @@
 </head>
 <body>
     <div class="main">
+        <script src="three.r92.min.js"></script>
+        <script src="vanta.net.min.js"></script>
 
+        <script>
+VANTA.NET({
+  el: "body",
+  color: 0x598e8,
+  backgroundColor: 0xffffff,
+  maxDistance: 23.00
+})
+        </script>
         <h1 class="line-1 anim-typewriter">Xiaohan Liao</h1>
 
         <!-- Exercises 01 to 10-->

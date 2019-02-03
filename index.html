@@ -34,6 +34,10 @@
         overflow: hidden;
         transform: translateY(-50%);
     }
+    li,ul{
+
+    	animation: bounceInUp 3s;
+    }
 
     /* Animation */
     .anim-typewriter {
@@ -67,7 +71,7 @@
 <html>
 
 <head>
-
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <title>*＼(＾▽＾)／*  Expanded Tools — Interactive</title>
     <meta charset="utf-8" />
 
@@ -115,8 +119,8 @@
 </head>
 <body>
     <div class="main">
-        <script src="three.r92.min.js"></script>
-        <script src="vanta.net.min.js"></script>
+        <script src="js/three.r92.min.js"></script>
+        <script src="js/vanta.net.min.js"></script>
 
         <script>
 VANTA.NET({
@@ -133,7 +137,7 @@ VANTA.NET({
         <div id="exercises">
             <h2>Exercises</h2>
             <ul>
-                <li><a href="Exercises/Exercise-01/index.html">Exercise 1 &mdash; Inspector Sketches</a></li>
+                <li><a href="Exercises/Exercise-01/exercise01.html">Exercise 1 &mdash; Inspector Sketches</a></li>
                 <li><a href="Exercises/Exercise-02/index.html">Exercise 2 &mdash; Coding from Life</a></li>
 
                 <li><a href="Exercises/Exercise-03/index.html">Exercise 3 &mdash; Media Query</a></li>

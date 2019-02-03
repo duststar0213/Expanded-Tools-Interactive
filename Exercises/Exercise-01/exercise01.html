@@ -105,7 +105,8 @@
         .main {
             width: 50%;
             
-            padding: 1em;
+            padding-top: 5em;
+
             /* border:1px solid #CCC; */
         }
 
@@ -153,6 +154,13 @@
     border-radius:10px !important;
     align-items: center;
 }
+
+
+.btn-group-vertical > a{
+    margin-bottom:10px;
+    border-radius:10px !important;
+    align-items: center;
+}
     </style>
 </head>
 <body>
@@ -160,20 +168,12 @@
         <script src="js/three.r92.min.js"></script>
         <script src="js/vanta.net.min.js"></script>
 
-        <script>
-VANTA.NET({
-  el: "html",
-  color: 0x937d34,
-  backgroundColor: 0xffffff,
-  maxDistance: 33.00
-})
-        </script>
-        <h1 class="line-1 anim-typewriter">Exercise 1: Inspector Sketch</h1>
+<h1 class="line-1 anim-typewriter">Inspector Sketch</h1>
  <div class="btn-group-vertical" >
 
- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Change DOM Color</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" >Change DOM Color</button>
   <div id="demo" class="collapse col-md-1">
- <img src="images/1.png" class="img-responsive" >
+ <img src="images/1.png" class="img-responsive">
  </div>
 
      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">Add Text-decoration</button>
@@ -186,12 +186,34 @@ VANTA.NET({
  <img src="images/3.png" class="img-responsive">
   </div>
  </div>
+
 </div>
 
+ <div class="wrapper text-center" style="padding-top: 20px">
+        
+<h1 class="line-1 anim-typewriter">Personal Projects</h1>
+ <div class="btn-group-vertical" >
 
+ <a href="https://hannahxiaohan0213.com/2017/08/30/charteasydraw/" class="btn btn-info">Chart Easy Draw</a>
 
+ <a href="https://hannahxiaohan0213.com/2017/08/30/charteasydraw/" class="btn btn-info">Generative Art</a>
+ <a href="https://www.openprocessing.org/sketch/419727" class="btn btn-info">Web Development</a>
 
+ 
+ </div>
+
+</div>
+
+        <script>
+VANTA.NET({
+  el: "html",
+  color: 0x937d34,
+  backgroundColor: 0xffffff,
+  maxDistance: 33.00
+})
+        </script>
 
 
 </body>
+
 </html>

@@ -17,6 +17,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin:50px;
+
 }
 
 .oval{
@@ -36,13 +37,15 @@
  	width: 45px;
  	background-color: #5a5b5b;
  	border-radius: 50%;
- 	margin-top:21px;
+ 	margin-top:22px;
  	margin-left: -60px;
- 
+ animation: spin-right 4s ease-in-out infinite;
 }
 
 .oval2:hover{
-	animation: spin-right 4s ease-in-out infinite;
+	 animation: spin-left 2s ease-in-out;
+	background-color: red;
+	
 }
 
 @keyframes spin-right {
@@ -53,9 +56,28 @@
   	  	transform: translate(10px,0px);
   }
 
+  90%{
+    transform: translate(-20px,0px);
+
+  }
+@keyframes spin-left{
+  50%{
+  	transform: translate(20px,0px);
+  }
+  80%{
+  	  	transform: translate(-10px,0px);
+  }
+
+
+
+}
+
+
+
+
 </style>
 <head>
-	<link rel="stylesheet" type="text/css" href="patten04-css.css">
+
 </head>
 <body>
 

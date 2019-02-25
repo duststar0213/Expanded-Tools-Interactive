@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <style type="text/css">
 body{
-	background:
-radial-gradient(circle at 50% 50%, lightgrey 9px, transparent 5px), repeating-radial-gradient(#2b5c2b 8px, yellow 4px, #ff8354 15px, transparent 20px, pink 21px, red 25px, lightblue 6px, #1a3cc56b 50px),
-radial-gradient(circle at 0% 50%, transparent 50%, rgba(250,250,250,.3) 21%, rgba(250,250,250,.3) 34%, transparent 35%, transparent) 0 -50px;
-background-color: lightblue;
-background-size: 30px 30px, 90px 90px;
+	    background: radial-gradient(circle at 50% 50%, #dddddd70 9px, transparent 5px), repeating-radial-gradient(#2bee2b00 8px, #c1ddfac2 4px, #ffffff 15px, transparent 20px, #f2e8ff 18px, #c4c5c5 25px, #d3f4ff 6px, #445cbd00 50px), radial-gradient(circle at 0% 50%, #be242400 50%, rgba(250,250,250,.3) 21%, rgba(250,250,250,.3) 34%, transparent 35%, transparent) 0 -27px;
+    background-color: #b2bcff36;
+    background-size: 30px 30px, 90px 90px;
 
 }
 .pattern1{
-	background-color:white;
-
-background-image: radial-gradient(circle at 10% 20%, slategray 9px, transparent 10px), repeating-radial-gradient(#2b5c2b 8px, blue 4px, #ff8354 5px, transparent 20px, pink 21px, red 25px, lightblue 26px, #1a3cc56b 50px);
-background-size: 130px 130px, 190px 190px;
+	background:radial-gradient(circle at 50% 50%, #a3cdf0 9px, transparent 5px), repeating-radial-gradient(#3a843a1f 8px, #00d0ff78 4px, #7d92f9 15px, transparent 20px, #c0d6ff 21px, #acb4ef 25px, lightblue 6px, #1a3cc56b 50px), radial-gradient(circle at 0% 50%, transparent 50%, rgba(250,250,250,.3) 21%, rgba(250,250,250,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-size: 30px 30px, 90px 90px;
 background-position: 0 0;
 display: inline-block;
 width:500px;
@@ -27,10 +23,10 @@ border-radius:500px 0px;
 
 }
 
-body .pattern1:hover{
-	background-color: white;
-	animation:  transone 10s ease-in-out infinite;
-	opacity: 0.8;
+ body, .pattern1:hover{
+background-color: white;
+	animation:  transone 4s ease-in-out;
+	opacity: 1;
 }
 .position2{
 	border-radius:0px 500px;
@@ -42,24 +38,24 @@ body .pattern1:hover{
     	        -moz-border-radius: 0px 0px;
   -webkit-border-radius: 0px 0px;
   border-radius: 0px 0px;
-        opacity:0.1;
-        background-size: 130px 130px, 190px 190px;
+        opacity:1;
+        background-size: 30px 30px, 90px 90px;
     }
     10% {
       
         -moz-border-radius: 500px 200px;
   -webkit-border-radius: 500px 200px;
   border-radius: 500px 0px;
-        opacity:0.3;
-        background-size: 100px 100px, 90px 90px;
+        opacity:1;
+        background-size: 100px 100px, 190px 190px;
     }
 
     20%{
     	        -moz-border-radius: 200px 0px;
   -webkit-border-radius: 200px 0px;
   border-radius: 200px 0px;
-        opacity:0.5;
-        background-size: 330px 330px, 590px 590px;
+        opacity:1;
+        background-size: 230px 230px, 590px 590px;
     }
 
      50% {
@@ -67,10 +63,14 @@ body .pattern1:hover{
   -webkit-border-radius: 200px 0px;
   border-radius: 200px 0px;
         transform: rotateZ(180deg) rotateX(0deg);
-        opacity:0.7;
+        opacity:1;
         background-size: 30px 30px, 10px 10px;
     }
 }
+
+
+
+
 </style>
 <html>
 <head>

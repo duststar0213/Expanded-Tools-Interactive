@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<style type="text/css">
+<html><head><style type="text/css">
   body{
 
   font-size: 20px;
@@ -13,40 +11,46 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+
+
 }
 
 
-.square{
+.square {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 50% 50%, #e7adadd4 20%, rgba(230, 193, 106, 0.62) 21%, rgb(255, 225, 187) 34%, transparent 25%, #98dcffe0), radial-gradient(circle at 10% 20%, transparent 20%, rgba(234, 192, 98, 0) 41%, rgba(123, 65, 255, 0.34) 44%, #834f9b3b 45%, #d86ff85e) 0 -150px;
+    background-color: #fddba9a3;
+    background-size: 125px 100px;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    margin: 10px;
+    border-radius: 40px 0px;
+  animation: spin;
+    
 
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle at 80% 50%, transparent 20%, rgba(255,255,255) 21%, rgba(255,255,255) 34%, transparent 35%, transparent),
-radial-gradient(circle at 10% 20%, transparent 20%, rgba(255,255,255) 21%, rgba(255,255,255) 34%, transparent 35%, transparent) 0 -50px;
-background-color: #f4a531;
-background-size:125px 100px;
-
-  display: inline-block;
-  padding: 10px;
-  position: relative;
-  margin: 10px;
-  border-radius: 40px 0px;
 }
 
-.square_small{
-
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255) 21%, rgba(255,255,255) 34%, transparent 35%, transparent),
-radial-gradient(circle at 100% 20%, transparent 20%, rgba(255,255,255) 21%, rgba(255,255,255) 34%, transparent 35%, transparent) 0 -50px;
-  background-color: #396b1a;
-  background-size:15px 10px;
-  display: inline-block;
-  padding: 0px;
-  margin: 0px;
-  position: relative;
-  top: 50px;
+.square:hover{
+      -webkit-animation: rotate-scale-up 0.65s linear both;
+          animation: rotate-scale-up 0.65s linear both;
 }
 
+
+.square_small {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 100% 50%, #b87c7c70 20%, rgba(255,255,255) 21%, rgba(255,255,255) 34%, transparent 35%, transparent), radial-gradient(circle at 100% 20%, transparent 20%, rgba(255,255,255) 21%, rgba(199, 127, 127, 0.91) 34%, transparent 35%, #ce6fe536) 0 -50px;
+    background-color: #fffefe00;
+    background-size: 15px 1px;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    top: 50px;
+      animation: size;
+}
 .square_large{
 
   width: 200px;
@@ -203,10 +207,41 @@ radial-gradient(circle at 100% 20%, transparent 20%, rgba(255,255,255) 21%, rgba
   margin: 0px;
   top: 498px;
   left:910px;
+
 }
+
+
+@-webkit-keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+@keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
 </style>
-<head>
-  <link rel="stylesheet" type="text/css" href="patten01-css.css">
+
 </head>
 <body>
 
@@ -376,6 +411,6 @@ radial-gradient(circle at 100% 20%, transparent 20%, rgba(255,255,255) 21%, rgba
     <div class="square"></div>
     <div class="square_small"></div>    
   </div>
-  </body>
-</body>
-</html>
+  
+
+</body></html>

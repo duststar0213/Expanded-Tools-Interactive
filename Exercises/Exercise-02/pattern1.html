@@ -2,7 +2,7 @@
 <style type="text/css">
 	
 .bodydiv{
-    background:
+    /*background:
     radial-gradient(red 3px, transparent 4px),
     radial-gradient(blue 3px, transparent 4px),
     radial-gradient(yellow 3px, transparent 4px),
@@ -12,19 +12,30 @@
     linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
     linear-gradient(-45deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
     linear-gradient(45deg, transparent 75px, transparent 76px, white 76px, navy 77px, transparent 78px, transparent 109px),
-    white;
+    white;*/
+   /* background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;*/
+  background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
     background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
     background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
     width:1600px;
     height:1600px;
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+  -webkit-transform: rotateX(45deg); /* Safari 3-8  */
+  transform-style: preserve-3d;
+  transform: rotateX(45deg);
  border-radius: 50%;
-animation: size 10s ease-in-out;
-opacity: 0.5;
+/*animation: size 10s ease-in-out;
+opacity: 0.5;*/
 
 }
 .bodydiv:hover{
-	display: block;
-	border-radius: 50%;
+	background-color: white;
 
 }
 .bigleaf,.bigleaf1,.bigleaf2,.bigleaf3,.bigleaf4,.bigleaf5{
@@ -33,9 +44,15 @@ opacity: 0.5;
    width: 150px; 
    height: 150px;
   /*background: hsla(30,100%,50%,.25);*/
-   background: radial-gradient(red 3px, transparent 14px), radial-gradient(blue 3px, transparent 4px), radial-gradient(yellow 3px, lightgreen 4px), linear-gradient(#fff000 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #c32d2d 75px, #75a03c 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #2c20a0 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #ff8203;
-    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
-    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+   background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+      background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
   border-radius:50%/300px;
   -moz-border-radius: 200px 0px;
   -webkit-border-radius: 200px 0px;
@@ -63,6 +80,7 @@ transform-origin:  center;
   -moz-border-radius: 100px 0px;
   -webkit-border-radius: 100px 0px;
   border-radius: 100px 0px;
+
   animation:blossom 4s ease-in-out infinite;
 }
 
@@ -194,13 +212,13 @@ transform: scale(1.2);
 }
 
 .clo:hover{
-	opacity: 0.8;
+	opacity: 1;
 }
 
 @keyframes blossom {
     50% {
         transform: rotateZ(0) rotateX(180deg);
-        opacity:0.1;
+        opacity:0.7;
     }
 }
 

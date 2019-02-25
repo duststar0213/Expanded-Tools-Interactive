@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<style type="text/css">
+<html><head><style type="text/css">
 body{
 background-color: lightyellow;
 
@@ -12,43 +11,112 @@ background-color: lightyellow;
 	width:300px;
 	height:300px;
 	display: inline-block;
-	background-color:navy;
-background-image: radial-gradient(white 15%, transparent 16%),
-radial-gradient(white 5%, transparent 16%),radial-gradient(lightgrey 55%, transparent 16%),linear-gradient(35deg, #fff000 14px, transparent 0),
-linear-gradient(-45deg, yellow 54px, transparent 0),
-linear-gradient(-45deg, lightgrey 34px, transparent 0),
-linear-gradient(45deg, navy 54px, transparent 0),
-linear-gradient(90deg, navy 24px, transparent 0),
-linear-gradient(-40deg, #42ebf4 44px, transparent 0),
-linear-gradient(45deg, red 67px, transparent 0),
+	background-color:#ffffff08;
+    background-image: radial-gradient(white 15%, transparent 16%), radial-gradient(#ff8686f5 5%, transparent 16%),radial-gradient(#f9884f61 55%, #ffffff00 16%),linear-gradient(35deg, #bcadea7a 14px, #300d0d00 0), linear-gradient(-45deg, #ffff0087 54px, transparent 0), linear-gradient(-45deg, #695aed 34px, transparent 0), linear-gradient(45deg, #e9aeae 54px, #e5d4d403 0), linear-gradient(-90deg, #3462a08a 24px, transparent 0), linear-gradient(-40deg, #ffcf5b 44px, #633f3f00 0), linear-gradient(45deg, #cdfeff4f 158px, #df767600 0), linear-gradient(45deg, transparent 65px, #ff57265c 15px, #e06c6c4a 75px, #6780ff00 276px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 15px, #badfff4f 276px, #65beebf0 376px, #B84943 177px, transparent 78px, #9c252552 109px);
+    
 
 
-    linear-gradient(45deg, transparent 65px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
-    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px);
-    border-top-left-radius:150px;
-    animation: radius 4s ease-in-out infinite;
 
 }
+.box2:hover{
+	  animation:  radius 2.5s ease-in-out infinite;
+}
 
+.box1:hover{
+	  animation:  heartbeat 2.5s ease-in-out infinite;
+}
 .box2{
 	width:300px;
 	height:300px;
 	display: inline-block;
-	background-color:pink;
-background-image: radial-gradient(white 15%, transparent 16%),
-radial-gradient(white 5%, transparent 16%),radial-gradient(silver 55%, transparent 16%),linear-gradient(35deg, #fff000 14px, transparent 0),
-linear-gradient(-45deg, yellow 54px, transparent 0),
-linear-gradient(-45deg, lightgrey 34px, transparent 0),
-linear-gradient(45deg, black 54px, transparent 0),
-linear-gradient(90deg, black 24px, transparent 0),
-linear-gradient(-40deg, #42ebf4 44px, transparent 0),
-linear-gradient(45deg, green 67px, transparent 0),
-
-
-    linear-gradient(45deg, transparent 65px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
-    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px);
+	background-color: #ffffff00;
+  background-image: radial-gradient(#ffffff47 15%, #ffffff00 16%), radial-gradient(white 5%, #ffffff00 16%),radial-gradient(#79d8ff7a 25%, #bc272700 16%),linear-gradient(35deg, #b4cd9f 14px, transparent 0), linear-gradient(-45deg, #d2ff996b 184px, #38cd3814 0), linear-gradient(-45deg, #d23f3f 34px, transparent 0), linear-gradient(45deg, #c5d4ff57 54px, transparent 0), linear-gradient(90deg, #969fba91 24px, transparent 0), linear-gradient(-40deg, #42ebf4 44px, #3a1d1d00 0), linear-gradient(45deg, #379c6b9e 67px, transparent 0), linear-gradient(45deg, #fd7d569e 65px, #e9af276e 75px, #b674ef1c 175px, #95b9cb 76px, #98d6faad 77px, transparent 109px), linear-gradient(-45deg, #80ff4a7d 175px, #cdff5a7d 176px, #ffdc18ed 198px, #b2fdab8f 177px, #69ff61 178px, #93e97f00 109px);
     border-bottom-right-radius:150px;
-     animation: radius 4s ease-in-out infinite;
+    animation:  heartbeat 2.5s ease-in-out infinite;
+ 
+
+     
+}
+
+@keyframes puff-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(1px);
+            filter: blur(1px);
+    opacity: 0;
+     border-top-left-radius:150px;
+  }
+}
+@keyframes puff-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(1px);
+            filter: blur(1px);
+    opacity: 0;
+     border-radius: :150px;
+  }
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 @keyframes radius{
@@ -95,59 +163,69 @@ linear-gradient(45deg, green 67px, transparent 0),
 
 }
 
-.box1:hover, .box2:hover{
-	animation: move 4s ease-in-out infinite;
+
+
+@keyframes rotate-scale-down {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(0.5) rotateZ(180deg);
+            transform: scale(0.5) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
 }
-@keyframes move{
-	0%{
-		   border-bottom-right-radius:150px;
-		   background-size: 30px 30px, 90px 90px;
-		   transform: rotate(60deg);
-		   transform:scale(1);
-
-	}
-
-	10%{
-		   border-radius:150px,0px;
-		   background-size: 40px 40px, 100px 100px;
-
-		   transform: rotate(120deg);
-		    transform:scale(0.8);
-	}
-
-	20%{
-		  border-radius:250px, 0px;
-		  background-size: 80px 80px, 190px 190px;
-		  transform: rotate(180deg);
-		   transform:scale(0.5);
-
-	}
-
-	30%{
-
-		 border-radius:0px, 150px;
-		 background-size: 180px 180px, 190px 190px;
-		 transform: rotate(240deg);
-		  transform:scale(0.7);
-	}
-
-
-   50%{
-
-		 border-radius:150px, 150px;
-		 background-size: 180px 180px, 290px 290px;
-		 transform: rotate(300deg);
-		  transform:scale(0.8);
-
-   }
 
 
 
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+                  border-top-left-radius:450px;
+
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            border-top-right-radius:550px;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            border-bottom-left-radius:550px;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+                border-bottom-right-radius:450px;
+  }
 }
+
 </style>
-<html>
 
-<head>
+
+
 	<title>pattern 4</title>
 </head>
 <body>
@@ -163,6 +241,17 @@ linear-gradient(45deg, green 67px, transparent 0),
 <div class="box2"></div>
 <div class="box1"></div>
 <div class="box2"></div>
-	
-</body>
-</html>
+	<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+
+</body></html>

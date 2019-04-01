@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<style type="text/css">
+body{
+	background-color: #fff000;
+}
+
+div
+{
+width:1600px;
+height:1600px;
+background:
+radial-gradient(circle at 10% 20%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 20% 30%, rgba(196, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 30% 40%, rgba(6, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 40% 50%, rgba(100, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 10% 12%, rgba(76, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 30% 23%, rgba(66, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 43% 30%, rgba(36, 26, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(circle at 50% 40%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(at 50% 100%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+radial-gradient(at 10% 100%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+ linear-gradient(-90deg, navy 1px, transparent 0),
+
+    linear-gradient(-45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(25deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+    linear-gradient(35deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+    linear-gradient(45deg, transparent 75px, transparent 76px, grey 76px, navy 77px, transparent 78px, transparent 109px),
+    linear-gradient(55deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+    linear-gradient(65deg, transparent 75px, transparent 76px, grey 76px, grey 77px, transparent 78px, transparent 109px),
+     linear-gradient(165deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+      linear-gradient(265deg, transparent 75px, transparent 76px, grey 76px, grey 77px, transparent 78px, transparent 109px),
+       linear-gradient(-165deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+         linear-gradient(45deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+      linear-gradient(135deg, transparent 75px, transparent 76px, grey 76px, grey 77px, transparent 78px, transparent 109px),
+       linear-gradient(90deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+
+    linear-gradient(45deg, transparent 65px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+#fff000;
+background-size: 120px 120px;
+display: block;
+ border-radius: 50%;
+animation: rotateOut 5s ease-in-out infinite;
+
+}
+div:hover {
+    animation: size 5s ease-in-out infinite;
+}
+
+@keyframes rotateOut {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+     background-size: 40px 40px,90px 90px;
+                border-radius: 10%;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+        background-size: 320px 320px, 100px 100px;
+         border-radius: 0%;
+    opacity: 0;
+  }
+}
+
+
+@keyframes size{
+
+	0%{
+    	        background-size: 40px 40px,90px 90px;
+    	        border-radius: 10%;
+    	       
+    }
+    5%{
+
+    	 background-size: 30px 30px, 100px 100px;
+
+    border-radius: 20%;
+    	 
+    	 
+    }
+    10% {
+        background-size: 50px 50px;
+         border-radius: 30%;
+    }
+
+    20%{
+    	      background-size: 120px 120px;
+    	       background-size: 30px 30px, 200px 200px;
+    	        border-radius: 40%;
+    }
+
+     50% {
+     	background-size: 220px 220px;
+     	 background-size: 130px 130px, 100px 100px;
+     	  border-radius: 50%;
+     	  scale(0.1);
+    }
+
+    80%{
+    	background-size: 320px 320px;
+    	 border-radius: 80%;
+    }
+
+    100%{
+    	background-size: 320px 320px, 100px 100px;
+    	 border-radius: 0%;
+    }
+}
+
+
+@keyframes girar {
+  0% {
+      transform: rotate(0deg);
+     }
+
+  100% {
+      transform: rotate(72000000deg);
+     }  
+  }
+
+ 
+</style>
+<html>
+
+<head>
+	<title>pattern 2</title>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

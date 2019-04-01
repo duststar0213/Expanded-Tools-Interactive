@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<style type="text/css">
+	
+.bodydiv{
+    /*background:
+    radial-gradient(red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    radial-gradient(pink 13px, transparent 4px),
+    linear-gradient(90deg, lightgreen 4px, transparent 0),
+    linear-gradient(-90deg, navy 1px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, white 76px, grey 77px, transparent 78px, transparent 109px),
+    linear-gradient(45deg, transparent 75px, transparent 76px, white 76px, navy 77px, transparent 78px, transparent 109px),
+    white;*/
+   /* background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;*/
+  background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    width:1600px;
+    height:1600px;
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+  -webkit-transform: rotateX(45deg); /* Safari 3-8  */
+  transform-style: preserve-3d;
+  transform: rotateX(45deg);
+ border-radius: 50%;
+/*animation: size 10s ease-in-out;
+opacity: 0.5;*/
+
+}
+.bodydiv:hover{
+	background-color: white;
+
+}
+.bigleaf,.bigleaf1,.bigleaf2,.bigleaf3,.bigleaf4,.bigleaf5{
+	 position:absolute;
+
+   width: 150px; 
+   height: 150px;
+  /*background: hsla(30,100%,50%,.25);*/
+  background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+   background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+      background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  border-radius:50%/300px;
+  -moz-border-radius: 200px 0px;
+  -webkit-border-radius: 200px 0px;
+  border-radius: 200px 0px;
+  margin-right: 10px;
+  outline-color: blue;
+ 
+}
+
+.bigleafanim{
+animation:bigblossom 10s ease-in-out infinite;
+}
+
+
+
+
+.leaf, .leaf1,.leaf2,.leaf3,.leaf4,.leaf5{
+  position:absolute;
+   width: 100px; 
+   height: 100px;
+  
+transform-origin:  center;
+  border-radius:50%/100px;
+
+  -moz-border-radius: 100px 0px;
+  -webkit-border-radius: 100px 0px;
+  border-radius: 100px 0px;
+
+  animation:blossom 4s ease-in-out infinite;
+}
+
+
+.leaf1rotate1{
+ transform: rotate(60deg);
+ background:hsla(51, 100%, 50%, 0.25);
+}
+
+.leaf2rotate2{
+ transform: rotate(120deg);
+ background: hsla(13, 100%, 50%, 0.25);
+}
+
+.leaf3rotate3{
+	 transform: rotate(180deg);
+	 background: hsla(98, 100%, 50%, 0.25);
+}
+
+.leaf4rotate4{
+	 transform: rotate(240deg);
+	 background: hsla(28, 100%, 50%, 0.25);
+}
+
+.leaf5rotate5{
+	 transform: rotate(300deg);
+	 background: hsla(234, 100%, 50%, 0.25);
+}
+
+
+
+.bigleaf1rotate1{
+ transform: rotate(60deg);
+ /*background:hsla(51, 100%, 50%, 0.25);*/
+   background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    outline-color: orange;
+}
+
+.bigleaf2rotate2{
+ transform: rotate(120deg);
+ background: hsla(13, 100%, 50%, 0.25);
+   background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, lightpink 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    outline-color: orange;
+}
+
+.bigleaf3rotate3{
+	 transform: rotate(180deg);
+	background: hsla(62, 100%, 50%, 0.7);
+	  background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    outline-color: orange;
+}
+
+.bigleaf4rotate4{
+	 transform: rotate(240deg);
+	    background: hsla(212, 100%, 49%, 0.64);
+	      background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    outline-color: orange;
+}
+
+.bigleaf5rotate5{
+	 transform: rotate(300deg);
+	background: hsla(0, 100%, 50%, 0.25);
+	  background:radial-gradient(circle at 0% 10%, red 3px, transparent 4px),
+    radial-gradient(blue 3px, transparent 4px),
+    radial-gradient(yellow 3px, transparent 4px),
+    linear-gradient(#fff000 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    outline-color: orange 2px;
+
+}
+
+
+
+.leafcontainer1,.bigcontainer1 ,.bigcontainer2, .bigcontainer3,.bigcontainer4,.bigcontainer5{
+	display: inline-block;
+	 	width:120px;
+	height:120px;
+position: absolute;
+
+
+
+}
+
+
+.clo{
+
+	width: 400px;
+	height: 400px;
+align-content: center;
+margin:400px auto;
+transform: scale(1.2);
+ opacity: 0;
+}
+
+.clo:hover{
+	opacity: 1;
+}
+
+@keyframes blossom {
+    50% {
+        transform: rotateZ(0) rotateX(180deg);
+        opacity:0.7;
+    }
+}
+
+@keyframes bigblossom {
+
+	0%{
+    	        -moz-border-radius: 0px 0px;
+  -webkit-border-radius: 0px 0px;
+  border-radius: 0px 0px;
+        opacity:0.6;
+    }
+    10% {
+        transform: rotateZ(0) rotateX(-180deg);
+        -moz-border-radius: 10px 0px;
+  -webkit-border-radius: 10px 0px;
+  border-radius: 10px 0px;
+        opacity:0.3;
+    }
+
+    20%{
+    	        -moz-border-radius: 150px 0px;
+  -webkit-border-radius: 150px 0px;
+  border-radius: 150px 0px;
+        opacity:0.9;
+    }
+
+     50% {
+     	-moz-border-radius: 200px 0px;
+  -webkit-border-radius: 200px 0px;
+  border-radius: 200px 0px;
+        transform: rotateZ(180deg) rotateX(0deg);
+        opacity:1;
+    }
+}
+
+.containerrotate1{
+	transform: rotate(60deg);
+}
+
+.containerrotate2{
+	transform: rotate(120deg);
+}
+
+.containerrotate3{
+	transform: rotate(180deg);
+}
+
+.containerrotate4{
+	transform: rotate(240deg);
+}
+.containerrotate5{
+	transform: rotate(300deg);
+}
+
+
+@keyframes size{
+
+	0%{
+    	        background-size: 40px 40px,90px 90px;
+    	        border-radius: 10%;
+    	       
+    }
+    5%{
+
+    	 background-size: 30px 30px, 100px 100px;
+
+    border-radius: 20%;
+    	 
+    	 
+    }
+    10% {
+        background-size: 50px 50px;
+         border-radius: 30%;
+    }
+
+    20%{
+    	      background-size: 120px 120px;
+    	       background-size: 30px 30px, 200px 200px;
+    	        border-radius: 40%;
+    }
+
+     50% {
+     	background-size: 220px 220px;
+     	 background-size: 130px 130px, 100px 100px;
+     	  border-radius: 50%;
+     	  scale(0.1);
+    }
+
+    80%{
+    	background-size: 320px 320px;
+    	 border-radius: 80%;
+    }
+
+    100%{
+    	background-size: 320px 320px, 100px 100px;
+    	 border-radius: 0%;
+    }
+}
+
+
+</style>
+<html>
+<head>
+	<title>pattern1</title>
+</head>
+<body class="bodydiv">
+
+
+
+<div class ="clo">	
+<div class="bigleafcontainer1">
+<div class="bigleaf bigleafanim"></div>
+<div class="bigleaf1 bigleaf1rotate1 bigleafanim"></div>
+<div class="bigleaf2 bigleaf2rotate2 bigleafanim"></div>
+<div class="bigleaf3 bigleaf3rotate3 bigleafanim"></div>
+<div class="bigleaf4 bigleaf4rotate4 bigleafanim"></div>
+<div class="bigleaf5 bigleaf5rotate5 bigleafanim"></div>
+
+
+<div class="bigleafcontainer1 containerrotate1"">
+<div class="bigleaf bigleafanim"></div>
+<div class="bigleaf1 bigleaf1rotate1 bigleafanim"></div>
+<div class="bigleaf2 bigleaf2rotate2 bigleafanim"></div>
+<div class="bigleaf3 bigleaf3rotate3 bigleafanim"></div>
+<div class="bigleaf4 bigleaf4rotate4 bigleafanim"></div>
+<div class="bigleaf5 bigleaf5rotate5 bigleafanim"></div>
+
+</div>
+
+
+<div class="bigleafcontainer1 containerrotate2"">
+<div class="bigleaf bigleafanim"></div>
+<div class="bigleaf1 bigleaf1rotate1 bigleafanim"></div>
+<div class="bigleaf2 bigleaf2rotate2 bigleafanim"></div>
+<div class="bigleaf3 bigleaf3rotate3 bigleafanim"></div>
+<div class="bigleaf4 bigleaf4rotate4 bigleafanim"></div>
+<div class="bigleaf5 bigleaf5rotate5 bigleafanim"></div>
+
+</div>
+
+
+<div class="bigleafcontainer1 containerrotate3"">
+<div class="bigleaf bigleafanim"></div>
+<div class="bigleaf1 bigleaf1rotate1 bigleafanim"></div>
+<div class="bigleaf2 bigleaf2rotate2 bigleafanim"></div>
+<div class="bigleaf3 bigleaf3rotate3 bigleafanim"></div>
+<div class="bigleaf4 bigleaf4rotate4 bigleafanim"></div>
+<div class="bigleaf5 bigleaf5rotate5 bigleafanim"></div>
+
+</div>
+
+
+<div class="bigleafcontainer1 containerrotate4"">
+<div class="bigleaf bigleafanim"></div>
+<div class="bigleaf1 bigleaf1rotate1 bigleafanim"></div>
+<div class="bigleaf2 bigleaf2rotate2 bigleafanim"></div>
+<div class="bigleaf3 bigleaf3rotate3 bigleafanim"></div>
+<div class="bigleaf4 bigleaf4rotate4 bigleafanim"></div>
+<div class="bigleaf5 bigleaf5rotate5 bigleafanim"></div>
+
+</div>
+
+
+
+<div class="bigleafcontainer1 containerrotate5"">
+<div class="bigleaf bigleafanim"></div>
+<div class="bigleaf1 bigleaf1rotate1 bigleafanim"></div>
+<div class="bigleaf2 bigleaf2rotate2 bigleafanim"></div>
+<div class="bigleaf3 bigleaf3rotate3 bigleafanim"></div>
+<div class="bigleaf4 bigleaf4rotate4 bigleafanim"></div>
+<div class="bigleaf5 bigleaf5rotate5 bigleafanim"></div>
+</div>
+
+</div>
+</body>
+</html>

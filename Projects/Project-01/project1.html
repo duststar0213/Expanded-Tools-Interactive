@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+
+<style>
+ 
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css?family=Rajdhani');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    @import url('https://fonts.googleapis.com/css?family=Oswald');
+    /* Global */
+    html {
+        min-height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        height: calc(100vh - 8em);
+        padding: 4em;
+        color: rgba(0,0,0,.75);
+      font-family: 'Rajdhani', sans-serif;
+        background-color: rgb(25,25,25);
+    }
+
+    .line-1 {
+        position: relative;
+        top: 50%;
+        width: 24em;
+        margin: 0 auto;
+        border-right: 2px solid rgba(0,0,0,.75);
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 380%;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);
+    }
+    li,ul{
+
+    	animation: bounceInUp 3s;
+    }
+   
+
+    /* Animation */
+    .anim-typewriter {
+        animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+    }
+
+    @keyframes typewriter {
+        from {
+        	font-family: 'Rajdhani', sans-serif;
+            width: 0;
+        }
+
+        to {
+        	   	font-family: 'Rajdhani', sans-serif;
+            width: 24em;
+        }
+    }
+
+    @keyframes blinkTextCursor {
+        from {
+        	  	font-family: 'Rajdhani', sans-serif;
+            border-right-color: rgba(255,255,255,.75);
+        }
+
+        to {
+        	  	font-family: 'Rajdhani', sans-serif;
+            border-right-color: transparent;
+        }
+    }
+    * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding-left: 85px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<html>
+
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <title>*＼(＾▽＾)／*  Expanded Tools — Interactive</title>
+    <meta charset="utf-8" />
+
+    <style>
+        body {
+              	font-family: 'Rajdhani', sans-serif;
+            line-height: 1.5em;
+            background-color: white;
+        }
+
+        .main {
+            width: 50%;
+            
+            padding-top: 5em;
+
+            /* border:1px solid #CCC; */
+        }
+
+        h1 {
+            margin-top: 0;
+     	font-family: 'Rajdhani', sans-serif;
+            font-size: 3.5em;
+            line-height: 1em;
+        }
+
+
+        a {
+            font-weight: bold;
+            color: #005cff;
+            text-decoration: none;
+        }
+
+            a:hover {
+                background-color: #FF0000;
+            }
+
+        ul {
+            padding-left: 18px;
+            list-style: none;
+        }
+
+            ul li {
+                color: #CCC;
+            }
+
+.collapse{
+  padding: 18px;
+  width: 100%;
+  height: auto;
+  border: none;
+  text-align: left;
+  outline: none;
+  overflow: scroll;
+}
+
+
+
+.btn-group-vertical > button{
+    margin-bottom:10px;
+    border-radius:10px !important;
+    align-items: center;
+}
+
+
+.btn-group-vertical > a{
+    margin-bottom:10px;
+    border-radius:10px !important;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+       <script src="js/three.r92.min.js"></script>
+        <script src="js/vanta.net.min.js"></script>
+
+ <div class="wrapper text-center" style="padding-top: 20px">
+        
+<h1 class="line-1 anim-typewriter">Pattern</h1>
+ <div class="btn-group-vertical">
+
+
+ <a href="pattern1.html" class="btn btn-info">Pattern1</a>
+ <a href="pattern2.html" class="btn btn-info">Pattern2</a>
+  <a href="pattern3.html" class="btn btn-info">Pattern3</a>
+   <a href="pattern4.html" class="btn btn-info">Pattern4</a>
+
+ 
+ </div>
+
+</div>
+
+
+ <div class="wrapper text-center" style="padding-top: 20px">
+ <h1 class="line-1 anim-typewriter">Pattern Sketches</h1>
+
+
+  <div class="btn-group-vertical">
+
+ <a href="images/pattern1.png" class="btn btn-info">Sketch1</a>
+ <a href="images/pattern2.png" class="btn btn-info">Sketch2</a>
+  <a href="images/pattern3.png" class="btn btn-info">Sketch3</a>
+   <a href="images/pattern4.png" class="btn btn-info">Sketch4</a>
+
+ </div>
+
+ </div>
+
+
+
+ <div class="wrapper text-center" style="padding-top: 20px">
+ <h1 class="line-1 anim-typewriter">Classmates'Pattern</h1>
+
+
+  <div class="btn-group-vertical">
+
+ <a href="classmates1.html" class="btn btn-info">Classmates Pattern1</a>
+ <a href="classmates2.html" class="btn btn-info">Classmates Pattern2</a>
+
+
+ </div>
+
+</div>
+
+        <script>
+VANTA.NET({
+  el: "html",
+  color: 0x937d34,
+  backgroundColor: 0xffffff,
+  maxDistance: 33.00
+})
+        </script>
+
+
+</body>
+
+</html>

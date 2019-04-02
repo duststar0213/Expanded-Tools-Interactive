@@ -61,7 +61,7 @@
 </head>
 
 <body>
-  <div class="container gallery-container">
+  <div id="hover" class="container gallery-container">
 
     <h1> Xiaohan-Hannah-Liao</h1>
 
@@ -239,15 +239,37 @@
 </head>
  <script src="js/three.r92.min.js"></script>
         <script src="js/vanta.net.min.js"></script>
+       <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 
         <script>
-VANTA.NET({
+
+        $("#hover").hover(function(){
+          VANTA.NET({
   el: "body",
   color: 0x598e8,
   backgroundColor: 0xffffff,
   maxDistance: 23.00
 })
-        </script>
+        }, function(){  VANTA.NET({
+  el: "body",
+  color: 0xffffff,
+  backgroundColor: 0x598e8,
+  maxDistance: 23.00
+})
+    
+
+        });
+
+
+        
+  </script>
+
+ 
+
+      
 
    
 </html>

@@ -76,7 +76,7 @@ function keyPressed() {
   }
 
   if (keyCode === 8) {
-    clear();
+    alert("Sorry, this feature is not yet working!");
   }
   if (keyCode === 32) {
 

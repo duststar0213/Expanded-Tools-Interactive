@@ -23,7 +23,7 @@ let bugs = []; // array of Jitter objects
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  song = loadSound('Assets/Nervous.mp3');
+  song = loadSound('Assets/yoy.mp3');
   background(0);
   textFont(myFont);
   textSize(90);

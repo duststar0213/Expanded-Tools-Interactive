@@ -87,7 +87,7 @@ function keyPressed() {
 
 
 function draw() {
-  background(0, 0, 0, 10);
+  background(0, 0, 0, 15);
    var rms = analyzer.getLevel();
    var ration = map(rms, 0, 1, frameCount,mouseX);
 console.log(rms);
@@ -96,7 +96,7 @@ console.log(rms);
 
     v.behaviors(mouseX+rms*random(2300,5000), mouseY+rms*2300);
     v.update(1.5+random(rms,rms*2), random(rms,rms*12));
-    v.show(1.5+rms*5);
+    v.show(2.5+rms*5);
 
   }
   

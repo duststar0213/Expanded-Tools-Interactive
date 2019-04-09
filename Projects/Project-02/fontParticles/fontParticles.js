@@ -58,9 +58,9 @@ function keyPressed() {
   if ( keyCode >= 65 && keyCode <= 90) {
     if (t.length * 50 < windowWidth) {
       t+=key;
-      points = font.textToPoints(t, 120, height/2, 120, {
+      points = font.textToPoints(t, 120, height/2, 180, {
       sampleFactor: 
-        0.25
+        0.2
       }
       );
       for (var i = 0; i < points.length; i++) {

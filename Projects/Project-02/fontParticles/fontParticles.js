@@ -94,7 +94,7 @@ console.log(rms);
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
 
-    v.behaviors(rms*random(2300,5000), rms*2300);
+    v.behaviors(mouseX+rms*random(2300,5000), mouseY+rms*2300);
     v.update(1.5+random(rms,rms*2), random(rms,rms*12));
     v.show(1.5+rms*5);
 

@@ -63,7 +63,7 @@ font-family: 'myFirstFont', Fallback, sans-serif;
   text-align: right;
   list-style: none;
   -webkit-animation-name: change;
-  -webkit-animation-duration: 20s;
+  -webkit-animation-duration: 50s;
   -webkit-animation-iteration-count: infinite;
   animation-name: change;
   animation-duration: 20s;

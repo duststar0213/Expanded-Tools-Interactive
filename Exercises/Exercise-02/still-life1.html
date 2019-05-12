@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>CSS Still Life 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+
+	<style>
+	.canvas {
+		/* if you want to change the background of your canvas, do it here */
+		background: white;
+	}
+
+	/* this is where you can style the objects in your still life */
+
+	.square{
+		width: 150px;
+		height: 260px;
+		background: rgb(29,142,17);
+background: linear-gradient(0deg, rgba(29,142,17,1) 0%, rgba(216,45,38,1) 68%, rgba(35,126,45,1) 100%);
+		position: absolute;
+		top: 150px;
+		left: 600px;
+
+	}
+	.square1{
+	width: 100px;
+	height: 180px;
+	background: #6bb851;
+	opacity: 0.8;
+	position: absolute;
+	top: 280px;
+	left: 320px;
+	border-top-right-radius: 20%;
+		border-top-left-radius: 20%;
+	}
+
+	
+	.square7{
+	width: 200px;
+	height: 10px;
+	background: #3a4a46;
+	opacity: 0.6;
+	position: absolute;
+	top: 450px;
+	left: 460px;
+	}
+
+	.square8{
+	width: 140px;
+	height: 10px;
+	background: #ff3426;
+	opacity: 0.6;
+	position: absolute;
+	top: 330px;
+	left: 590px;
+	}
+	
+	.square12{
+	width: 120px;
+	height: 20px;
+	background: #e2e6e1;
+	opacity: 0.6;
+	position: absolute;
+	top: 140px;
+	left: 610px;
+	}
+	.square13{
+	width: 120px;
+	height: 20px;
+	background: #e2e6e1;
+	opacity: 0.6;
+	position: absolute;
+	top: 130px;
+	left: 620px;
+	}
+	.square14{
+	width: 120px;
+	height: 90px;
+	background: #5d9454;
+	opacity: 0.6;
+	position: absolute;
+	top: 235px;
+	left: 610px;
+	}
+	/*.square15{
+	width: 120px;
+	height: 120px;
+	background: #5d9454;
+	opacity: 0.6;
+	position: absolute;
+	top: 150px;
+	left: 600px;
+	}*/
+	.square16{
+	width: 110px;
+	height: 60px;
+	background: #2e4f29;
+	opacity: 0.6;
+	position: absolute;
+	top: 200px;
+	left: 600px;
+	}
+	/*.square17{
+	width: 110px;
+	height: 100px;
+	background: #2e4f29;
+	opacity: 0.6;
+	position: absolute;
+	top: 150px;
+	left: 600px;
+	}*/
+	.square18{
+	width: 130px;
+	height: 30px;
+	background: #2e4f29;
+	opacity: 0.6;
+	position: absolute;
+	top: 300px;
+	left: 600px;
+	}
+	
+	.square29{
+	width: 70px;
+	height: 30px;
+	background: #7ad658;
+	opacity: 0.7;
+	position: absolute;
+	top: 270px;
+	left: 335px;
+	border-top-left-radius: 20%;
+	border-top-right-radius: 20%;
+	}
+	.square30{
+	width: 10px;
+	height: 30px;
+	background: #fff;
+	opacity: 0.5;
+	position: absolute;
+	top: 300px;
+	left: 390px;
+	border-radius: 50%;
+
+	}
+	.square31{
+	width: 30px;
+	height: 30px;
+	background: #ffee2e;
+	opacity: 0.8;
+	position: absolute;
+	top: 200px;
+	left: 420px;
+	border-radius: 50%;
+	}
+	.square32{
+	width: 30px;
+	height: 30px;
+	background: #ffee2e;
+	opacity: 0.8;
+	position: absolute;
+	top: 220px;
+	left: 380px;
+		border-radius: 50%;
+	}
+	.square33{
+	width: 30px;
+	height: 30px;
+	background: #ffee2e;
+	opacity: 0.8;
+	position: absolute;
+	top: 220px;
+	left: 300px;
+		border-radius: 50%;
+	}
+	.square34{
+	width: 30px;
+	height: 30px;
+	background: #ffc940;
+	opacity: 0.5;
+	position: absolute;
+	top: 220px;
+	left: 325px;
+		border-radius: 50%;
+	}
+	.square35{
+	width: 30px;
+	height: 30px;
+	background: #ffc940;
+	opacity: 0.5;
+	position: absolute;
+	top: 215px;
+	left: 400px;
+		border-radius: 50%;
+	}
+	.square36{
+	width: 30px;
+	height: 30px;
+	background: #ffc940;
+	opacity: 0.5;
+	position: absolute;
+	top: 215px;
+	left: 385px;
+		border-radius: 50%;
+	}
+	.square37{
+	width: 20px;
+	height: 20px;
+	background: #ffc940;
+	opacity: 0.5;
+	position: absolute;
+	top: 200px;
+	left: 420px;
+		border-radius: 50%;
+	}
+	.square38{
+	width: 25px;
+	height: 25px;
+	background: #ffee2e;
+	opacity: 0.8;
+	position: absolute;
+	top: 210px;
+	left: 470px;
+		border-radius: 50%;
+	}
+	.square39{
+	width: 20px;
+	height: 20px;
+	background: #ffc940;
+	opacity: 0.4;
+	position: absolute;
+	top: 208px;
+	left: 467px;
+		border-radius: 50%;
+	}
+	.square40{
+	width: 30px;
+	height: 30px;
+	background: #ffee2e;
+	opacity: 0.6;
+	position: absolute;
+	top: 210px;
+	left: 280px;
+		border-radius: 50%;
+	}
+	.trapezoid {
+	width: 2px;
+	height: 30px;
+	transform: skew(30deg);
+	background: #000;
+	opacity: 0.4;
+	position: absolute;
+	top: 245px;
+	left: 340px;
+		border-radius: 50%;
+	}
+	.trapezoid1 {
+	width: 5px;
+	height: 30px;
+	transform: skew(40deg);
+	background: #000;
+	opacity: 0.4;
+	position: absolute;
+	top: 245px;
+	left: 340px;
+		border-radius: 50%;
+	}
+	.trapezoid2 {
+	width: 3px;
+	height: 30px;
+	transform: skew(-20deg);
+	background: #000;
+	opacity: 0.6;
+	position: absolute;
+	top: 245px;
+	left: 390px;
+		border-radius: 50%;
+	}
+	.trapezoid3 {
+	width: 3px;
+	height: 50px;
+	transform: skew(-30deg);
+	background: #a000;
+	opacity: 0.6;
+	position: absolute;
+	top: 230px;
+	left: 410px;
+
+	}
+	.trapezoid4 {
+	width: 6px;
+	height: 50px;
+	transform: skew(-60deg);
+	background: #000;
+	opacity: 0.4;
+	position: absolute;
+	top: 233px;
+	left: 430px;
+	}
+	.trapezoid5 {
+	width: 3px;
+	height: 30px;
+	transform: skew(30deg);
+	background: #000;
+	opacity: 0.4;
+	position: absolute;
+	top: 240px;
+	left: 350px;
+	}
+	/*.square41{
+	width: 180px;
+	height: 20px;
+	background: #ffffff;
+	opacity: 0.6;
+	position: absolute;
+	top: 400px;
+	left: 350px;
+	}*/
+	/*.trapezoid6 {
+	width: 5px;
+	height: 60px;
+	transform: skew(30deg);
+	background: #fff7c9;
+	opacity: 0.6;
+	position: absolute;
+	top: 400px;
+	left: 350px;
+	}
+	.trapezoid7 {
+	width: 5px;
+	height: 80px;
+	transform: skew(30deg);
+	background: #fff7c9;
+	opacity: 0.6;
+	position: absolute;
+	top: 395px;
+	left: 345px;
+	}
+	.trapezoid8 {
+	width: 8px;
+	height: 60px;
+	transform: skew(30deg);
+	background: #fff7c9;
+	opacity: 0.6;
+	position: absolute;
+	top: 410px;
+	left: 340px;
+	}
+	.trapezoid9 {
+	width: 6px;
+	height: 60px;
+	transform: skew(30deg);
+	background: #fff7c9;
+	opacity: 0.6;
+	position: absolute;
+	top: 410px;
+	left: 330px;
+	}*/
+	.square42{
+	width: 30px;
+	height: 20px;
+	background: #fff7c9;
+	opacity: 0.4;
+	position: absolute;
+	top: 460px;
+	left: 360px;
+	}
+	.square43{
+	width: 25px;
+	height: 25px;
+	background: #ffc940;
+	opacity: 0.4;
+	position: absolute;
+	top: 215px;
+	left: 330px;
+	border-radius:50%;
+	}
+	.square44{
+	width: 110px;
+	height: 25px;
+	background: #8a776a;
+	opacity: 0.4;
+	position: absolute;
+	top: 450px;
+	left: 100px;
+	}
+	.square45{
+	width: 110px;
+	height: 25px;
+	background: #8a776a;
+	opacity: 0.4;
+	position: absolute;
+	top: 440px;
+	left: 110px;
+	}
+	.square46{
+	width: 110px;
+	height: 25px;
+	background: #8a776a;
+
+	position: absolute;
+	top: 450px;
+	left: 115px;
+	}
+	.square47{
+	width: 40px;
+	height: 15px;
+	background: #8a776a;
+	position: absolute;
+	top: 418px;
+	left: 140px;
+	}
+	.square48{
+	width: 30px;
+	height: 15px;
+	background: #8a776a;
+	position: absolute;
+	top: 418px;
+	left: 160px;
+	}
+	.square49{
+	width: 85px;
+	height: 15px;
+	background: #ffd0b0;
+	opacity: 0.4;
+	position: absolute;
+	top: 425px;
+	left: 120px;
+	}
+	.square50{
+	width: 50px;
+	height: 15px;
+	background: #8a776a;
+	opacity: 0.4;
+	position: absolute;
+	top: 400px;
+	left: 140px;
+	}
+	.square51{
+	width: 50px;
+	height: 10px;
+	background: #ffffd9;
+	opacity: 0.7;
+	position: absolute;
+	top: 405px;
+	left: 140px;
+	}
+	.square52{
+	width: 10px;
+	height: 10px;
+	background: #ffd0b0;
+	opacity: 0.7;
+	position: absolute;
+	top: 405px;
+	left: 160px;
+	}
+	.square53{
+	width: 50px;
+	height: 10px;
+	background: #ffffd9;
+	opacity: 0.9;
+	position: absolute;
+	top: 390px;
+	left: 140px;
+	}
+	.square54{
+	width: 58px;
+    height: 65px;
+    background: #5e4f7b;
+    /* opacity: 0.4; */
+    position: absolute;
+    top: 380px;
+    left: 134px;
+    border-top-left-radius: 50%;
+
+	}
+	/*.square55{
+	width: 10px;
+	height: 10px;
+	background: #8a776a;
+	opacity: 0.4;
+	position: absolute;
+	top: 380px;
+	left: 134px;
+	}*/
+	/*.square56{
+	width: 15px;
+	height: 20px;
+	background: #8a776a;
+	position: absolute;
+	top: 380px;
+	left: 134px;
+	}*/
+	.square57{
+	width: 5px;
+	height: 20px;
+	background: #8a776a;
+	opacity: 0.4;
+	position: absolute;
+	top: 380px;
+	left: 190px;
+	}
+	.square58{
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	opacity: 0.7;
+	position: absolute;
+	top: 330px;
+	left: 140px;
+	border-radius:50%;
+	border: 1px solid black;
+	}
+	.square59{
+	width: 15px;
+	height: 20px;
+	background: lavender;
+	position: absolute;
+	top: 400px;
+	left: 130px;
+	border-radius:20%;
+	}
+	.square60{
+	width: 30px;
+	height: 10px;
+	background: #000;
+	position: absolute;
+	top: 330px;
+	left: 150px;
+		border-radius: 50%;
+	}
+	.square61{
+	width: 15px;
+	height: 30px;
+	background: #000;
+	position: absolute;
+	top: 335px;
+	left: 138px;
+	border-radius: 50%;
+	}
+	.square62{
+	width: 5px;
+	height: 30px;
+	background: #000;
+	position: absolute;
+	top: 335px;
+	left: 190px;
+	border-radius:50%;
+	}
+	.square63{
+	width: 12px;
+	height: 12px;
+	background: #ffae4c; 
+	position: absolute;
+	top: 325px;
+	left: 180px;
+	border-radius:50%;
+	}
+	.square64{
+	width: 12px;
+	height: 12px;
+	background: #fff04c;
+	position: absolute;
+	top: 327px;
+	left: 185px;
+		border-radius:50%;
+	}
+	.square65{
+	width: 15px;
+	height: 15px;
+	background: #ffae4c;
+	position: absolute;
+	top: 325px;
+	left: 135px;
+	border-radius:50%;
+	}
+	.square66{
+	width: 10px;
+	height: 10px;
+	background: #ffae4c;
+	opacity: 0.4;
+	position: absolute;
+	top: 330px;
+	left: 190px;
+	border-radius:50%;
+	}
+	.square67{
+	width: 15px;
+	height: 15px;
+	background: #ff4c4c;
+	position: absolute;
+	top: 315px;
+	left: 170px;
+	border-top-right-radius:50%;
+	}
+	.square68{
+	width: 20px;
+	height: 17px;
+	background: #ff4c4c;
+	position: absolute;
+	top: 314px;
+	left: 150px;
+	border-top-left-radius:50%;
+	}
+	.square69{
+	width: 5px;
+	height: 5px;
+	background: #ffffff;
+	opacity: 0.7;
+	position: absolute;
+	top: 314px;
+	left: 165px;
+	}
+	.square70{
+	width: 6px;
+	height: 6px;
+	background: #000000;
+	position: absolute;
+	top: 355px;
+	left: 155px;
+	border-radius:50%;
+	}
+	.square71{
+	width: 6px;
+	height: 6px;
+	background: #000000;
+	position: absolute;
+	top: 355px;
+	left: 175px;
+	border-radius:50%;
+	}
+	
+	/*.square72{
+	width: 10px;
+	height: 10px;
+	background: #ff5275;
+	opacity: 0.6;
+	position: absolute;
+	top: 465px;
+	left: 120px;
+	}
+	.square73{
+	width: 20px;
+	height: 20px;
+	background: #ff5275;
+	opacity: 0.4;
+	position: absolute;
+	top: 455px;
+	left: 100px;
+	}
+	.square74{
+	width: 10px;
+	height: 10px;
+	background: #ff5275;
+	opacity: 0.4;
+	position: absolute;
+	top: 450px;
+	left: 130px;
+	}*/
+	/*.square75{
+	width: 30px;
+	height: 10px;
+	background: #64de81;
+	opacity: 0.6;
+	position: absolute;
+	top: 460px;
+	left: 170px;
+	}
+	.square76{
+	width: 30px;
+	height: 10px;
+	background: #64de81;
+	opacity: 0.6;
+	position: absolute;
+	top: 455px;
+	left: 180px;
+	}
+	.square77{
+	width: 10px;
+	height: 10px;
+	background: #64de81;
+	opacity: 0.6;
+	position: absolute;
+	top: 455px;
+	left: 215px;
+	}
+	.square78{
+	width: 20px;
+	height: 10px;
+	background: #64de81;
+	opacity: 0.6;
+	position: absolute;
+	top: 440px;
+	left: 210px;
+	}*/
+	.square79{
+	width: 10px;
+	height: 150px;
+	background: lightgrey;
+	position: absolute;
+	top: 300px;
+	left: 100px;
+	border-top-left-radius: 10%;
+	border-bottom-left-radius: 10%
+	}
+	.square80{
+	width: 10px;
+	height: 150px;
+	background: lightgrey;
+	position: absolute;
+	top: 300px;
+	left: 215px;
+	border-top-right-radius: 10%;
+	border-bottom-right-radius: 10%;
+	}
+	.square81{
+	width: 120px;
+	height: 15px;
+	background: lightgrey;
+	position: absolute;
+	top: 300px;
+	left: 100px;
+	border-top-right-radius: 10%;
+	border-top-right-radius: 10%;
+
+	}
+	.square82{
+	width: 20px;
+	height: 80px;
+	background: #ffffff;
+	opacity: 0.9;
+	position: absolute;
+	top: 300px;
+	left: 110px;
+	}
+	.square83{
+	width: 40px;
+	height: 10px;
+	background:red;
+	opacity: 0.9;
+	position: absolute;
+	top: 400px;
+	left: 150px;
+	border-radius:20%;
+
+	}
+	.square84{
+	width: 40px;
+	height: 10px;
+	background: pink;
+	position: absolute;
+	top: 410px;
+	left: 150px;
+	border-radius:20%;
+	}
+	.square85{
+	width: 20px;
+	height: 40px;
+	background: #ffffff;
+	opacity: 0.8;
+	position: absolute;
+	top: 300px;
+	left: 200px;
+	}
+	.square86{
+	width: 900px;
+	height: 200px;
+	background: #fff761;
+	opacity: 0.3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	filter: blur(150px);	
+}
+
+
+	</style>
+
+</head>
+
+<body>
+
+    <div class="canvas">
+
+        <!-- put your still life here -->
+        <div class="square"> </div>
+        <div class="square1"> </div>
+        <div class="square2"> </div>
+        <div class="square3"> </div>
+		<div class="square4"> </div>
+        <div class="square5"> </div>
+        <div class="square6"> </div>
+        <div class="square7"> </div>
+        <div class="square8"> </div>
+        <div class="square9"> </div>
+        <div class="square10"> </div>
+        <div class="square11"> </div>
+        <div class="square12"> </div>
+        <div class="square13"> </div>
+        <div class="square14"> </div>
+        <div class="square15"> </div>
+        <div class="square16"> </div>
+        <div class="square17"> </div>
+        <div class="square18"> </div>
+        <div class="square19"> </div>
+        <div class="square20"> </div>
+        <div class="square21"> </div>
+        <div class="square22"> </div>
+        <div class="square23"> </div>
+        <div class="square24"> </div>
+        <div class="square25"> </div>
+        <div class="square26"> </div>
+        <div class="square27"> </div>
+        <div class="square28"> </div>
+        <div class="square29"> </div>
+        <div class="square30"> </div>
+        <div class="square31"> </div>
+        <div class="square32"> </div>
+        <div class="square33"> </div>
+        <div class="square34"> </div>
+        <div class="square35"> </div>
+        <div class="square36"> </div>
+        <div class="square37"> </div>
+        <div class="square38"> </div>
+        <div class="square39"> </div>
+        <div class="square40"> </div>
+        <div class="trapezoid"> </div>
+        <div class="trapezoid1"> </div>
+        <div class="trapezoid2"> </div>
+        <div class="trapezoid3"> </div>
+        <div class="trapezoid4"> </div>
+        <div class="trapezoid5"> </div>
+        <div class="square41"> </div>
+        <div class="trapezoid6"> </div>
+        <div class="trapezoid7"> </div>
+        <div class="trapezoid8"> </div>
+        <div class="trapezoid9"> </div>
+        <div class="square42"> </div>
+        <div class="square43"> </div>
+        <div class="square44"> </div>
+        <div class="square45"> </div>
+        <div class="square46"> </div>
+        <div class="square47"> </div>
+        <div class="square48"> </div>
+        <div class="square49"> </div>
+        <div class="square50"> </div>
+        <div class="square51"> </div>
+        <div class="square52"> </div>
+        <div class="square53"> </div>
+        <div class="square54"> </div>
+        <div class="square55"> </div>
+        <div class="square56"> </div>
+        <div class="square57"> </div>
+        <div class="square59"> </div>
+<div class="container1">
+        <div class="square58"> </div>
+        <div class="square60"> </div>
+        <div class="square61"> </div>
+        <div class="square62"> </div>
+        <div class="square63"> </div>
+        <div class="square64"> </div>
+        <div class="square65"> </div>
+        <div class="square66"> </div>
+        <div class="square67"> </div>
+        <div class="square68"> </div>
+        <div class="square69"> </div>
+        <div class="square70"> </div>
+        <div class="square71"> </div>
+ </div>
+ 		<div class="square72"> </div>
+        <div class="square73"> </div>
+        <div class="square74"> </div>
+        <div class="square75"> </div>
+        <div class="square76"> </div>
+        <div class="square77"> </div>
+        <div class="square78"> </div>
+        <div class="square79"> </div>
+        <div class="square80"> </div>
+        <div class="square81"> </div>
+        <div class="square82"> </div>
+        <div class="square83"> </div>
+        <div class="square84"> </div>
+        <div class="square85"> </div>
+        <div class="square86"> </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

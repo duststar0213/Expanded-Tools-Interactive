@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Markov 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="markov.js" type="text/javascript"></script>
+      <script src="input.js" type="text/javascript"></script>
+   <script src="vehicle.js" type="text/javascript"></script>
+   <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+    <style>
+      body {
+        padding: 20px;
+
+      }
+
+
+      #advice {
+        padding: 4px;
+        width:60%;
+        top:60%;
+         margin: auto;
+         border-radius:2%;
+        background-color: #DDD;
+        font-size: 12pt;
+        color:darkgrey;
+        background: #fff url(images/159.jpg) repeat center center;
+        font-family: 'Homemade Apple', cursive;
+
+      }
+
+      #button {
+    margin-left: auto;
+  margin-right: auto;
+  font-size:12px;
+  color:white;
+  text-align: center;
+      
+        display:inline-block;
+       
+      }
+
+
+      @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
+
+body {
+  padding: 4em;
+  background: #EEE;
+}
+
+a span {
+  background: #FFF;
+  display: block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+a:hover {
+  box-shadow: 0 2px 0 #000, 0 2px 0px 2px #f03755;
+}
+a:active {
+  top: 4px;
+  padding-bottom: 0px;
+  box-shadow: 0 1px 0 #000;
+}
+h1 {
+   font: normal 22px/25px "Patrick Hand", sans-serif;
+   color:grey;
+}
+#sli{
+  font: normal 12px/15px "Patrick Hand", sans-serif;
+
+}
+a{
+  position: relative;
+  float: left;
+  font: normal 22px/25px "Patrick Hand", sans-serif;
+  margin-right: 10px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 #000;
+  transition: padding 0.1s, box-shadow 0.1s, top 0.1s;
+  background-image: url('data:image/gif;base64,R0lGODlhBAAEAIABAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NUY1OENCRDdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NUY1OENCRTdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk1RjU4Q0JCN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk1RjU4Q0JDN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAAAQABAAAAgYEEpdoeQUAOw==');
+}
+
+      #interface {
+        margin:auto;
+        width:50%;
+        display: show;
+
+      }
+
+      #loading {
+        display: block;
+      }
+      #defaultCanvas0{
+        padding-top: 100px;
+      }
+body, html {
+background: #lightgrey;
+  margin: 0;
+  padding: 0;
+}
+
+.range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 200px;
+  margin-top: 10px;
+  transform: translate(-50%, -50%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: rgba(238,238,238,);
+  background: -moz-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(238,238,238,)), color-stop(25%, rgba(221,221,221)), color-stop(51%, rgba(204,204,204)), color-stop(100%, rgba(154,154,154)));
+  background: -webkit-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: -o-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: -ms-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+  height: 2px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  background: rgba(238,238,238,);
+  background: -moz-linear-gradient(45deg, rgba(208,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(238,238,238,)), color-stop(25%, rgba(221,221,221)), color-stop(51%, rgba(204,204,204)), color-stop(100%, rgba(154,154,154)));
+  background: -webkit-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: -o-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: -ms-linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  background: linear-gradient(45deg, rgba(238,238,238,) 0%, rgba(221,221,221) 25%, rgba(204,204,204) 51%, rgba(154,154,154) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+  height: 2px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid darkgrey;
+  border-radius: 50%;
+  height:  25px;
+  width: 25px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: #fff;
+  cursor: -webkit-grab;
+
+  -webkit-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  border: 2px solid darkgrey;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: #fff;
+  cursor: -moz-grab;
+  -moz-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+
+
+/*.range.blue::-webkit-slider-thumb {
+   border-color: rgb(59,173,227);
+}
+
+.range.ltpurple::-webkit-slider-thumb {
+   border-color: rgb(87,111,230);
+}
+
+.range.purple::-webkit-slider-thumb {
+   border-color: rgb(152,68,183);
+}
+
+.range.pink::-webkit-slider-thumb {
+   border-color: rgb(255,53,127);
+}
+
+.range.blue::-moz-range-thumb {
+   border-color: rgb(59,173,227);
+}
+
+.range.ltpurple::-moz-range-thumb {
+   border-color: rgb(87,111,230);
+}
+
+.range.purple::-moz-range-thumb {
+   border-color: rgb(152,68,183);
+}
+
+.range.pink::-moz-range-thumb {
+   border-color: rgb(255,53,127);
+}*/
+
+input[type=range]::-webkit-slider-thumb:active {
+  cursor: -webkit-grabbing;
+}
+
+input[type=range]::-moz-range-thumb:active {
+  cursor: -moz-grabbing;
+}
+    </style>
+
+  </head>
+  <body>
+
+    <h1><center>Random Advice Generator</center></h1>
+
+    <div id="loading">
+
+    </div>
+
+    <div id="interface">
+    <p id="sli" ><input id="slider" type="range" min="2" max="10" value="3" class="range blue"></input><br/>
+     Randomness <span id="order">3</span> (lower more nonsensy)</p>
+    <p><a id="button">advice please</a></p>
+
+    <p id = "advice">Here is some advice.</p>
+    </div>
+   
+
+
+
+  </body>
+</html>

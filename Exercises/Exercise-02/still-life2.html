@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>CSS Still Life 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+	<style>
+	.canvas {
+		/* if you want to change the background of your canvas, do it here */
+		background: white;
+	}
+
+	/* this is where you can style the objects in your still life */
+	.square15{
+		width: 900px;
+		height: 550px;
+		    background: #f78700;
+		opacity: 0.1;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 0px;
+		left: 380px;
+		filter: blur(80px);
+	}
+	.circle{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		top: 240px;
+		left: 240px;
+		
+	}
+	.circle:hover{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		top: 240px;
+		left: 240px;
+		animation-name: examplee;
+  		animation-duration: 4s;
+ 		animation-iteration-count: infinite;
+	}
+	.circle1{
+		width: 200px;
+		height: 50px;
+		background: #bdbdbd;
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.5;
+		top: 380px;
+		left: 260px;
+	}
+	.circle2{
+		width: 200px;
+		height: 50px;
+		background: #e8fdff;
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.5;
+		top: 390px;
+		left: 260px;
+	}
+	.circle3{
+		width: 220px;
+		height: 50px;
+		background: #e8fdff;
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.5;
+		top: 380px;
+		left: 250px;
+	}
+	.circle4 {
+    width: 220px;
+    height:50px;
+    background: darkgrey;
+    position: absolute;
+ border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+   border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+    top: 380px;
+    left: 250px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+	.circle5{
+		width: 150px;
+		height: 20px;
+		background: #c2cbcc;
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.5;
+		top: 390px;
+		left: 300px;
+	}
+	.circle6{
+		width: 150px;
+		height: 27px;
+		background: #c2cbcc;
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.5;
+		top: 390px;
+		left: 300px;
+	}
+	.circle7{
+		width: 30px;
+		height: 30px;
+		background: #d4d0a5;
+		position: absolute;
+		border-radius: 50%;
+		top: 370px;
+		left: 320px;
+	}
+
+	
+	.circle8{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 280px;
+		left: 220px;
+		animation-name: examplee;
+  		animation-duration: 8s;
+ 		animation-iteration-count: infinite;
+		
+	}
+	.circle8:hover{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 280px;
+		left: 220px;
+		animation-name: examplee;
+  		animation-duration: 4s;
+ 		animation-iteration-count: infinite;
+	}
+
+@-webkit-keyframes examplee {
+  0%   {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
+  25%  {background-image: linear-gradient(to bottom, rgba(171,169,144,0), rgba(255,251,207,1))}
+  50%  {background-image: linear-gradient(to left, rgba(171,169,144,0), rgba(255,251,207,1))}
+  75%  {background-image: linear-gradient(to top, rgba(171,169,144,0), rgba(255,251,207,1))}
+  100% {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
+}
+
+/* Standard syntax */
+@keyframes examplee {
+ 0%   {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
+  25%  {background-image: linear-gradient(to bottom, rgba(171,169,144,0), rgba(255,251,207,1))}
+  50%  {background-image: linear-gradient(to left, rgba(171,169,144,0), rgba(255,251,207,1))}
+  75%  {background-image: linear-gradient(to top, rgba(171,169,144,0), rgba(255,251,207,1))}
+  100% {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
+}
+	.circle9 {
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(to right, rgba(171,169,144,0), rgb(243, 227, 51));
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    top: 280px;
+    left: 280px;
+}
+	.circle9:hover{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.8;
+		top: 280px;
+		left: 280px;
+		animation-name: examplee;
+  		animation-duration: 6s;
+ 		animation-iteration-count: infinite;
+	}
+	.circle10{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgb(255, 191, 191));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.8;
+		top: 220px;
+		left: 360px;
+		animation-name: examplee;
+  		animation-duration: 5s;
+ 		animation-iteration-count: infinite;
+		
+	}
+	.circle10:hover{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.8;
+		top: 220px;
+		left: 360px;
+		animation-name: examplee;
+  		animation-duration: 1s;
+ 		animation-iteration-count: infinite;
+	}
+	.circle11{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.6;
+		top: 220px;
+		left: 310px;
+		animation-name: examplee;
+  		animation-duration: 1s;
+ 		animation-iteration-count: infinite;
+	}
+	.circle11:hover{
+		width: 90px;
+		height: 90px;
+background-image: linear-gradient(to right, rgba(171,169,144,0), rgb(255, 191, 191));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.6;
+		top: 220px;
+		left: 310px;
+		animation-name: examplee;
+  		animation-duration: 2s;
+ 		animation-iteration-count: infinite;
+	}
+	.circle12{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 280px;
+		left: 340px;
+
+		
+	}
+	.circle12:hover{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 280px;
+		left: 340px;
+		animation-name: examplee;
+  		animation-duration: 5s;
+ 		animation-iteration-count: infinite;
+	}
+	.circle13{
+		width: 10px;
+		height: 20px;
+		background-image: linear-gradient(to right, rgba(224,134,134,0), rgba(224,134,134,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 220px;
+		left: 350px;
+
+		
+	}
+	.circle13:hover{
+		width: 10px;
+		height: 20px;
+		background-image: linear-gradient(to right, rgba(224,134,134,0), rgba(224,134,134,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 220px;
+		left: 350px;
+		animation-name: example;
+  		animation-duration: 3s;
+ 		animation-iteration-count: infinite;
+	}
+
+	@-webkit-keyframes example {
+  0%   {opacity: 1; left:350px; top:220px;}
+  25%  {opacity: 0.2; left:360px; top:210px;}
+  50%  {opacity: 0.8; left:350px; top:220px;}
+  75%  {opacity: 0.3; left:360px; top:210px;}
+  100% {opacity: 1; left:350px; top:220px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {opacity: 1; left:350px; top:220px;}
+  25%  {opacity: 0.2; left:360px; top:210px;}
+  50%  {opacity: 0.8; left:350px; top:220px;}
+  75%  {opacity: 0.3; left:360px; top:210px;}
+  100% {opacity: 1; left:350px; top:220px;}
+}
+
+	.trapezoid{
+	width: 140px;
+	height: 60px;
+	transform: skew(-50deg);
+	background: #c9dbff;
+	opacity: 0.4;
+	position: absolute;
+	top: 360px;
+	left: 550px;
+	}
+	.trapezoid1{
+	width: 140px;
+	height: 60px;
+	transform: skew(-50deg);
+	background: #c9dbff;
+	opacity: 0.4;
+	position: absolute;
+	top: 360px;
+	left: 550px;
+	}
+	.square {
+    width: 140px;
+    height: 50px;
+    background: #99a7a5;
+    opacity: 0.6;
+    position: absolute;
+    top: 420px;
+    left: 515px;
+}
+	.trapezoid1 {
+    width: 140px;
+    height: 60px;
+    transform: skew(-50deg);
+
+    background-image: radial-gradient(#121358 ,#5f7bda );
+    position: absolute;
+    top: 360px;
+    left: 550px;
+}
+	.square2{
+		width: 145px;
+		height: 3px;
+		background: #ffffff;
+		opacity: 0.6;
+		position: absolute;
+		top: 430px;
+		left: 520px;
+	}
+	.square3{
+		width: 145px;
+		height: 3px;
+		background: #ffffff;
+		opacity: 0.6;
+		position: absolute;
+		top: 440px;
+		left: 515px;
+	}
+	.square4{
+		width: 145px;
+		height: 3px;
+		background: #ffffff;
+		opacity: 0.6;
+		position: absolute;
+		top: 450px;
+		left: 520px;
+	}
+	.square5{
+		width: 145px;
+		height: 3px;
+		background: #ffffff;
+		opacity: 0.6;
+		position: absolute;
+		top: 460px;
+		left: 515px;
+	}
+	
+	
+	.square7 {
+    width: 5px;
+    height: 60px;
+    background: #adafab;
+    opacity: 0.6;
+    transform: skew(-50deg);
+    position: absolute;
+    top: 370px;
+    left: 680px;
+}
+	.square8 {
+    width: 5px;
+    height: 60px;
+    background: #b5bbca;
+    opacity: 0.6;
+    transform: skew(-50deg);
+    position: absolute;
+    top: 375px;
+    left: 685px;
+}
+	.square9{
+		width: 5px;
+		height: 60px;
+		 background: #b5bbca;
+		opacity: 0.6;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 380px;
+		left: 690px;
+	}
+	.square10{
+		width: 5px;
+		height: 60px;
+ background: #b5bbca;
+		opacity: 0.6;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 385px;
+		left: 695px;
+	}
+	.square11{
+		width: 5px;
+		height: 60px;
+ background: #b5bbca;
+		opacity: 0.6;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 390px;
+		left: 690px;
+	}
+	.square12{
+		width: 5px;
+		height: 60px;
+ background: #b5bbca;
+		opacity: 0.6;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 395px;
+		left: 690px;
+	}
+	.square13{
+		width: 5px;
+		height: 60px;
+	 background: #b5bbca;
+		opacity: 0.6;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 400px;
+		left: 690px;
+	}
+	.square14{
+		width: 5px;
+		height: 60px;
+	 background: #b5bbca;
+		opacity: 0.6;
+		transform: skew(-50deg);
+		position: absolute;
+		top: 410px;
+		left: 690px;
+	}
+	/*.trapezoid4{
+	width: 140px;
+	height: 60px;
+	transform: skew(-50deg);
+	background: #c9dbff;
+	opacity: 0.4;
+	position: absolute;
+	top: 410px;
+	left: 550px;
+	box-shadow: 10px 10px 5px #aaaaaa;
+	}*/
+	.circle22{
+		width: 100px;
+		height: 100px;
+		background-image: linear-gradient(to right, rgba(252,245,237,0), rgba(252,245,237,1));
+		position: absolute;
+		border-radius: 50%;
+		opacity: 1;
+		top: 290px;
+		left: 570px;
+		z-index: 1;
+	}
+	.circle23{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		border-radius: 70%;
+		background: #ffffff;
+
+		top: 290px;
+		left: 570px;
+		z-index: 1;
+	}
+	.square16 {
+    width: 80px;
+    height: 180px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 1;
+    transform: skew(-5deg);
+    position: absolute;
+    top: 200px;
+    left: 620px;
+}
+
+		.square17 {
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 20%;
+    opacity: 1;
+    transform: skew(-5deg);
+    position: absolute;
+    top: 290px;
+    left: 575px;
+}
+	}
+	.square18{
+		width: 30px;
+		height: 30px;
+		background: #ffffff;
+		border-radius: 70%;
+		transform: skew(-5deg);
+		position: absolute;
+		top: 290px;
+		left: 575px;
+
+
+
+	}
+	.square19{
+		width: 20px;
+		height: 30px;
+	    background: #c3bfbf;
+		border-radius: 40%;
+		opacity: 0.8;
+		transform: skew(-5deg);
+		position: absolute;
+		top: 375px;
+		left: 590px;
+	}
+	.square20 {
+    width: 20px;
+    height: 30px;
+    background: #c3bfbf;
+    border-radius: 30%;
+    opacity: 0.8;
+    transform: skew(5deg);
+    position: absolute;
+    top: 375px;
+    left: 645px;
+
+}
+	.square21{
+		width: 15px;
+		height: 20px;
+		background: #ffffff;
+		border-radius: 30%;
+		opacity: 0.8;
+		transform: skew(5deg);
+		position: absolute;
+		top: 360px;
+		left: 680px;
+	}
+	.square22{
+		width: 10px;
+		height: 10px;
+		background: #ff8533;
+		border-radius: 30%;
+		opacity: 1;
+		position: absolute;
+		top: 345px;
+		left: 625px;
+	}
+	.circle24{
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		border-radius: 70%;
+	   background: #d21e26;
+
+		opacity: 0.7;
+		top: 340px;
+		left: 600px;
+		z-index: 1;
+	}
+	.circle25{
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		border-radius: 70%;
+		    background: #d21e26;
+
+		opacity: 0.7;
+		top: 340px;
+		left: 652px;
+		z-index: 1;
+	}
+
+	.square23{
+		width: 600px;
+		height: 200px;
+		background: #ff6169;
+		opacity: 0.2;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		filter: blur(120px);
+	}
+
+	.eyes1, .eyes2{
+		width:10px;
+		height:15px;
+		border-radius: 50%;
+		position: absolute;
+		  
+    z-index: 1;
+    background: black;
+	}
+	.eyes1{
+		  top: 320px;
+    left: 600px;
+	}
+	.eyes2{
+		  top: 320px;
+    left: 650px;
+	}
+
+	</style>
+
+</head>
+
+<body>
+
+    <div class="canvas">
+
+        <!-- put your still life here -->
+        <div class="circle"> </div>
+        <div class="circle1"> </div>
+        <div class="circle2"> </div>
+        <div class="circle3"> </div>
+        <div class="circle4"> </div>
+        <div class="circle5"> </div>
+        <div class="circle6"> </div>
+        <div class="circle7"> </div>
+        <div class="circle8"> </div>
+        <div class="circle9"> </div>
+        <div class="circle10"> </div>
+        <div class="circle11"> </div>
+        <div class="circle12"> </div>
+        <div class="circle13"> </div>
+        <div class="circle14"> </div>
+        <div class="circle15"> </div>
+        <div class="circle16"> </div>
+        <div class="circle17"> </div>
+        <div class="circle18"> </div>
+        <div class="circle19"> </div>
+        <div class="circle20"> </div>
+        <div class="trapezoid"> </div>
+        <div class="trapezoid1"> </div>
+        <div class="square"> </div>
+        <div class="square1"> </div>
+        <div class="square2"> </div>
+        <div class="square3"> </div>
+        <div class="square4"> </div>
+        <div class="square5"> </div>
+        <div class="square6"> </div>
+        <div class="trapezoid2"> </div>
+        <div class="trapezoid3"> </div>
+        <div class="square7"> </div>
+        <div class="square8"> </div>
+        <div class="square9"> </div>
+        <div class="square10"> </div>
+        <div class="square11"> </div>
+        <div class="square12"> </div>
+        <div class="square13"> </div>
+        <div class="square14"> </div>
+        <div class="trapezoid4"> </div>
+        <div class="circle22"> </div>
+        <div class="square15"> </div>
+        <div class="circle23"> </div>
+        <div class="eyes1"></div>
+           <div class="eyes2"></div>
+        <div class="square16"> </div>
+        <div class="square17"> </div>
+        <div class="square18"> </div>
+        <div class="square19"> </div>
+        <div class="square20"> </div>
+        <div class="square21"> </div>
+        <div class="square22"> </div>
+        <div class="circle24"> </div>
+        <div class="circle25"> </div>
+        <div class="square23"> </div>
+
+    </div>
+
+</body>
+
+</html>

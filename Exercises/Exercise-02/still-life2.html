@@ -1,708 +1,779 @@
 <!DOCTYPE html>
 <html>
+<style>
+body{
+	background-color:lightyellow;
+}
+#tridiv {
+  
+  position: fixed;
+ 
+  margin:400px 0px 0px 400px;
+  background: transparent;
+  font-size: 100%;
 
-<head>
+}
+.face {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
 
-	<title>CSS Still Life 1</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+/* .catbook styles */
+.catbook {
+  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:8em;
+  height:2em;
+  margin:-1em 0 0 -4em;
+  position: absolute;
+  margin:10px 0px 0px 10px;
+}
+.catbook .ft {
+  transform:translateZ(5em);
+}
+.catbook .bk {
+  transform:translateZ(-5em) rotateY(180deg);
+}
+.catbook .rt, .catbook .lt {
+  width:10em;
+  height:2em;
+}
+.catbook .tp, .catbook .bm {
+  width:8em;
+  height:10em;
+}
+.catbook .face {
+  background-color:#b6ccff;
+}
+.catbook .ft {
+  background-color:#0052aa;
+}
+.catbook .tp {
+  background-color:#1f1fcf;
+}
+@keyframes an-pupils {
+  from {
+    left: 60px;
+  }
+  to {
+    left: 0px;
+  }
+}
 
+@keyframes an-ears {
+  from {
+    top: 0;
+  }
+  to {
+    top: 25px;
+  }
+}
 
-	<style>
-	.canvas {
-		/* if you want to change the background of your canvas, do it here */
-		background: white;
-	}
+body {
+  background-color: #0a7e8c;
+}
 
-	/* this is where you can style the objects in your still life */
-	.square15{
-		width: 900px;
-		height: 550px;
-		    background: #f78700;
-		opacity: 0.1;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 0px;
-		left: 380px;
-		filter: blur(80px);
-	}
-	.circle{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		top: 240px;
-		left: 240px;
-		
-	}
-	.circle:hover{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		top: 240px;
-		left: 240px;
-		animation-name: examplee;
-  		animation-duration: 4s;
- 		animation-iteration-count: infinite;
-	}
-	.circle1{
-		width: 200px;
-		height: 50px;
-		background: #bdbdbd;
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.5;
-		top: 380px;
-		left: 260px;
-	}
-	.circle2{
-		width: 200px;
-		height: 50px;
-		background: #e8fdff;
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.5;
-		top: 390px;
-		left: 260px;
-	}
-	.circle3{
-		width: 220px;
-		height: 50px;
-		background: #e8fdff;
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.5;
-		top: 380px;
-		left: 250px;
-	}
-	.circle4 {
-    width: 220px;
-    height:50px;
-    background: darkgrey;
+#cat {
+ position: relative;
+  width: 480px;
+  margin: -130px 0px 0px 61px;
+  transform: scale(0.15);
+}
+
+#head {
+  width: 400px;
+  height: 370px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.catbody1{
+	width: 312px;
+    height: 266px;
+    transform: rotate(-30deg);
+    border-top-left-radius: 38%;
+    border-top-right-radius: 38%;
+    background-color: #fff;
     position: absolute;
- border-bottom-left-radius: 40%;
-  border-bottom-right-radius: 40%;
-   border-top-left-radius: 40%;
-  border-top-right-radius: 40%;
-    top: 380px;
-    left: 250px;
-    box-shadow: 10px 10px 5px #aaaaaa;
-}
-	.circle5{
-		width: 150px;
-		height: 20px;
-		background: #c2cbcc;
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.5;
-		top: 390px;
-		left: 300px;
-	}
-	.circle6{
-		width: 150px;
-		height: 27px;
-		background: #c2cbcc;
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.5;
-		top: 390px;
-		left: 300px;
-	}
-	.circle7{
-		width: 30px;
-		height: 30px;
-		background: #d4d0a5;
-		position: absolute;
-		border-radius: 50%;
-		top: 370px;
-		left: 320px;
-	}
-
-	
-	.circle8{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 280px;
-		left: 220px;
-		animation-name: examplee;
-  		animation-duration: 8s;
- 		animation-iteration-count: infinite;
-		
-	}
-	.circle8:hover{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 280px;
-		left: 220px;
-		animation-name: examplee;
-  		animation-duration: 4s;
- 		animation-iteration-count: infinite;
-	}
-
-@-webkit-keyframes examplee {
-  0%   {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
-  25%  {background-image: linear-gradient(to bottom, rgba(171,169,144,0), rgba(255,251,207,1))}
-  50%  {background-image: linear-gradient(to left, rgba(171,169,144,0), rgba(255,251,207,1))}
-  75%  {background-image: linear-gradient(to top, rgba(171,169,144,0), rgba(255,251,207,1))}
-  100% {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
+    margin: -81px 1px 0px 161px;
 }
 
-/* Standard syntax */
-@keyframes examplee {
- 0%   {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
-  25%  {background-image: linear-gradient(to bottom, rgba(171,169,144,0), rgba(255,251,207,1))}
-  50%  {background-image: linear-gradient(to left, rgba(171,169,144,0), rgba(255,251,207,1))}
-  75%  {background-image: linear-gradient(to top, rgba(171,169,144,0), rgba(255,251,207,1))}
-  100% {background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1))}
-}
-	.circle9 {
-    width: 100px;
-    height: 100px;
-    background-image: linear-gradient(to right, rgba(171,169,144,0), rgb(243, 227, 51));
+
+.catbody2{
+width: 512px;
+    height: 566px;
+    height: 566px;
+    transform: rotate(-30deg);
+    border-top-left-radius: 119%;
+    border-top-right-radius: 135%;
+    background-color: #fff;
+    border-bottom-left-radius: 506px;
+    border-bottom-right-radius: 500px;
     position: absolute;
+    margin: -81px 1px 0px 161px;
+}
+
+#ears {
+  height: 65px;
+  position: relative;
+  left: 35px;
+  
+}
+#ears:hover{
+animation-name: an-ears;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.ear {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 160px solid #fff;
+  font-size: 0;
+  line-height: 0;
+  float: left;
+  margin-right: 60px;
+  -ms-transform: rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.ear:first-child {
+  -ms-transform: rotate(-35deg);
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+#eyes {
+  clear: both;
+  width: 350px;
+  position: relative;
+  top: 25px;
+  left: 53px;
+}
+
+.eye {
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  float: left;
+}
+
+.eye:first-child {
+  margin-right: 50px;
+}
+
+.pupil {
+  position: relative;
+  top: 40px;
+  background-color: #000000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+ }
+.pupil:hover{
+  animation-name: an-pupils;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+
+}
+.pupil_ref {
+  background-color: #ffffff;
+  border-radius: 45%;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 40px;
+  left: 10px;
+}
+
+#nose {
+  width: 45px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  top: 160px;
+  left: 170px;
+}
+
+#baffi_sx {
+  position: relative;
+  left: -100px;
+  top: 85px;
+  -ms-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+#baffi_dx {
+  position: relative;
+  left: 223px;
+  top: 96px;
+  -ms-transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+
+.baffo {
+  width: 260px;
+  height: 5px;
+  border: solid 3px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 60%/30px 30px 0 0;
+}
+.cattail{
+	border: 32px solid #fff;
+    display: inline-block;
+    min-width: 34em;
+    min-height: 34em;
+    padding: 0.5em;
     border-radius: 50%;
-    opacity: 0.8;
-    top: 280px;
-    left: 280px;
-}
-	.circle9:hover{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.8;
-		top: 280px;
-		left: 280px;
-		animation-name: examplee;
-  		animation-duration: 6s;
- 		animation-iteration-count: infinite;
-	}
-	.circle10{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgb(255, 191, 191));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.8;
-		top: 220px;
-		left: 360px;
-		animation-name: examplee;
-  		animation-duration: 5s;
- 		animation-iteration-count: infinite;
-		
-	}
-	.circle10:hover{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.8;
-		top: 220px;
-		left: 360px;
-		animation-name: examplee;
-  		animation-duration: 1s;
- 		animation-iteration-count: infinite;
-	}
-	.circle11{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.6;
-		top: 220px;
-		left: 310px;
-		animation-name: examplee;
-  		animation-duration: 1s;
- 		animation-iteration-count: infinite;
-	}
-	.circle11:hover{
-		width: 90px;
-		height: 90px;
-background-image: linear-gradient(to right, rgba(171,169,144,0), rgb(255, 191, 191));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.6;
-		top: 220px;
-		left: 310px;
-		animation-name: examplee;
-  		animation-duration: 2s;
- 		animation-iteration-count: infinite;
-	}
-	.circle12{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 280px;
-		left: 340px;
-
-		
-	}
-	.circle12:hover{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(171,169,144,0), rgba(255,251,207,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 280px;
-		left: 340px;
-		animation-name: examplee;
-  		animation-duration: 5s;
- 		animation-iteration-count: infinite;
-	}
-	.circle13{
-		width: 10px;
-		height: 20px;
-		background-image: linear-gradient(to right, rgba(224,134,134,0), rgba(224,134,134,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 220px;
-		left: 350px;
-
-		
-	}
-	.circle13:hover{
-		width: 10px;
-		height: 20px;
-		background-image: linear-gradient(to right, rgba(224,134,134,0), rgba(224,134,134,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 220px;
-		left: 350px;
-		animation-name: example;
-  		animation-duration: 3s;
- 		animation-iteration-count: infinite;
-	}
-
-	@-webkit-keyframes example {
-  0%   {opacity: 1; left:350px; top:220px;}
-  25%  {opacity: 0.2; left:360px; top:210px;}
-  50%  {opacity: 0.8; left:350px; top:220px;}
-  75%  {opacity: 0.3; left:360px; top:210px;}
-  100% {opacity: 1; left:350px; top:220px;}
-}
-
-/* Standard syntax */
-@keyframes example {
-  0%   {opacity: 1; left:350px; top:220px;}
-  25%  {opacity: 0.2; left:360px; top:210px;}
-  50%  {opacity: 0.8; left:350px; top:220px;}
-  75%  {opacity: 0.3; left:360px; top:210px;}
-  100% {opacity: 1; left:350px; top:220px;}
-}
-
-	.trapezoid{
-	width: 140px;
-	height: 60px;
-	transform: skew(-50deg);
-	background: #c9dbff;
-	opacity: 0.4;
-	position: absolute;
-	top: 360px;
-	left: 550px;
-	}
-	.trapezoid1{
-	width: 140px;
-	height: 60px;
-	transform: skew(-50deg);
-	background: #c9dbff;
-	opacity: 0.4;
-	position: absolute;
-	top: 360px;
-	left: 550px;
-	}
-	.square {
-    width: 140px;
-    height: 50px;
-    background: #99a7a5;
-    opacity: 0.6;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
     position: absolute;
-    top: 420px;
-    left: 515px;
+    margin: 9px 0px 0px 112px;
 }
-	.trapezoid1 {
-    width: 140px;
-    height: 60px;
-    transform: skew(-50deg);
 
-    background-image: radial-gradient(#121358 ,#5f7bda );
-    position: absolute;
-    top: 360px;
-    left: 550px;
+.ball{
+ 
+  content: "";
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0.95;
+background: radial-gradient(farthest-side at 44% 28%, #edffa3, #efff00a3 30%, #b5852f 150%);
+    z-index: 2;
+  height: 30px;
+  width: 30px;
+  z-index: 2;
 }
-	.square2{
-		width: 145px;
-		height: 3px;
-		background: #ffffff;
-		opacity: 0.6;
-		position: absolute;
-		top: 430px;
-		left: 520px;
-	}
-	.square3{
-		width: 145px;
-		height: 3px;
-		background: #ffffff;
-		opacity: 0.6;
-		position: absolute;
-		top: 440px;
-		left: 515px;
-	}
-	.square4{
-		width: 145px;
-		height: 3px;
-		background: #ffffff;
-		opacity: 0.6;
-		position: absolute;
-		top: 450px;
-		left: 520px;
-	}
-	.square5{
-		width: 145px;
-		height: 3px;
-		background: #ffffff;
-		opacity: 0.6;
-		position: absolute;
-		top: 460px;
-		left: 515px;
-	}
+
+.ball:hover{
+background: radial-gradient(farthest-side at 44% 28%, #ffc5a3, #ff8100a3 30%, #b5852f 150%);
 	
-	
-	.square7 {
-    width: 5px;
-    height: 60px;
-    background: #adafab;
-    opacity: 0.6;
-    transform: skew(-50deg);
-    position: absolute;
-    top: 370px;
-    left: 680px;
 }
-	.square8 {
-    width: 5px;
-    height: 60px;
-    background: #b5bbca;
-    opacity: 0.6;
-    transform: skew(-50deg);
-    position: absolute;
-    top: 375px;
-    left: 685px;
-}
-	.square9{
-		width: 5px;
-		height: 60px;
-		 background: #b5bbca;
-		opacity: 0.6;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 380px;
-		left: 690px;
-	}
-	.square10{
-		width: 5px;
-		height: 60px;
- background: #b5bbca;
-		opacity: 0.6;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 385px;
-		left: 695px;
-	}
-	.square11{
-		width: 5px;
-		height: 60px;
- background: #b5bbca;
-		opacity: 0.6;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 390px;
-		left: 690px;
-	}
-	.square12{
-		width: 5px;
-		height: 60px;
- background: #b5bbca;
-		opacity: 0.6;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 395px;
-		left: 690px;
-	}
-	.square13{
-		width: 5px;
-		height: 60px;
-	 background: #b5bbca;
-		opacity: 0.6;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 400px;
-		left: 690px;
-	}
-	.square14{
-		width: 5px;
-		height: 60px;
-	 background: #b5bbca;
-		opacity: 0.6;
-		transform: skew(-50deg);
-		position: absolute;
-		top: 410px;
-		left: 690px;
-	}
-	/*.trapezoid4{
-	width: 140px;
-	height: 60px;
-	transform: skew(-50deg);
-	background: #c9dbff;
-	opacity: 0.4;
-	position: absolute;
-	top: 410px;
-	left: 550px;
-	box-shadow: 10px 10px 5px #aaaaaa;
-	}*/
-	.circle22{
-		width: 100px;
-		height: 100px;
-		background-image: linear-gradient(to right, rgba(252,245,237,0), rgba(252,245,237,1));
-		position: absolute;
-		border-radius: 50%;
-		opacity: 1;
-		top: 290px;
-		left: 570px;
-		z-index: 1;
-	}
-	.circle23{
-		width: 100px;
-		height: 100px;
-		position: absolute;
-		border-radius: 70%;
-		background: #ffffff;
-
-		top: 290px;
-		left: 570px;
-		z-index: 1;
-	}
-	.square16 {
-    width: 80px;
-    height: 180px;
-    background: #ffffff;
-    border-radius: 50%;
-    opacity: 1;
-    transform: skew(-5deg);
-    position: absolute;
-    top: 200px;
-    left: 620px;
+.ball:nth-child(1){
+  position: absolute;
+  margin:10px 0px 0px 10px;
 }
 
-		.square17 {
-    width: 30px;
-    height: 30px;
-    background: #ffffff;
-    border-radius: 20%;
-    opacity: 1;
-    transform: skew(-5deg);
-    position: absolute;
-    top: 290px;
-    left: 575px;
+.ball:nth-child(2){
+  position: absolute;
+  margin:20px 0px 0px 20px;
 }
-	}
-	.square18{
-		width: 30px;
-		height: 30px;
-		background: #ffffff;
-		border-radius: 70%;
-		transform: skew(-5deg);
-		position: absolute;
-		top: 290px;
-		left: 575px;
-
-
-
-	}
-	.square19{
-		width: 20px;
-		height: 30px;
-	    background: #c3bfbf;
-		border-radius: 40%;
-		opacity: 0.8;
-		transform: skew(-5deg);
-		position: absolute;
-		top: 375px;
-		left: 590px;
-	}
-	.square20 {
-    width: 20px;
-    height: 30px;
-    background: #c3bfbf;
-    border-radius: 30%;
-    opacity: 0.8;
-    transform: skew(5deg);
-    position: absolute;
-    top: 375px;
-    left: 645px;
-
+.ball:nth-child(3){
+  position: absolute;
+  margin:30px 0px 0px 20px;
 }
-	.square21{
-		width: 15px;
-		height: 20px;
-		background: #ffffff;
-		border-radius: 30%;
-		opacity: 0.8;
-		transform: skew(5deg);
-		position: absolute;
-		top: 360px;
-		left: 680px;
-	}
-	.square22{
-		width: 10px;
-		height: 10px;
-		background: #ff8533;
-		border-radius: 30%;
-		opacity: 1;
-		position: absolute;
-		top: 345px;
-		left: 625px;
-	}
-	.circle24{
-		width: 10px;
-		height: 10px;
-		position: absolute;
-		border-radius: 70%;
-	   background: #d21e26;
 
-		opacity: 0.7;
-		top: 340px;
-		left: 600px;
-		z-index: 1;
-	}
-	.circle25{
-		width: 10px;
-		height: 10px;
-		position: absolute;
-		border-radius: 70%;
-		    background: #d21e26;
+.ball:nth-child(4) {
+    position: absolute;
+    margin: 15px 0px 0px 56px;
+}
 
-		opacity: 0.7;
-		top: 340px;
-		left: 652px;
-		z-index: 1;
-	}
+.ball:nth-child(5){
+  position: absolute;
+  margin:10px 0px 0px 30px;
+}
 
-	.square23{
-		width: 600px;
-		height: 200px;
-		background: #ff6169;
-		opacity: 0.2;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		filter: blur(120px);
-	}
+.ball:nth-child(6){
+  position: absolute;
+  margin:42px 0px 0px 40px;
+}
 
-	.eyes1, .eyes2{
-		width:10px;
-		height:15px;
-		border-radius: 50%;
-		position: absolute;
-		  
-    z-index: 1;
-    background: black;
-	}
-	.eyes1{
-		  top: 320px;
-    left: 600px;
-	}
-	.eyes2{
-		  top: 320px;
-    left: 650px;
-	}
+.ball:nth-child(7){
+  position: absolute;
+  margin:20px 0px 0px 30px;
+}
+
+.ball:nth-child(8){
+  position: absolute;
+  margin:40px 0px 0px 50px;
+}
+
+.ballholder{
+  position: absolute;
+  display: inline-block;
+  margin:450px 0px 0px 300px;
+}
+#tridiv1 {
+  perspective: 800px;
+ position: fixed;
+
+  background: transparent;
+  font-size: 100%;
+  transform: scale(0.5);
+margin: 532px 0px 0px 349px;
+  z-index: -3;
+}
+.face1 {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.scene1, .shape1, .face1, .face1-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene1 {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+}
+.shape1 {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face1, .face1-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface1-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face1 {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face1-wrapper .face1 {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side1 {
+  left: 50%;
+}
+.cr, .cr .side1 {
+  height: 100%;
+}
+[class*="cylinder"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cylinder"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cylinder"] .tp, [class*="cylinder"] .bm, [class*="cylinder"] .tp .photon-shader1, [class*="cylinder"] .bm .photon-shader1 {
+  border-radius: 50%;
+}
+[class*="cylinder"] .bm {
+  top: 100%;
+}
+/* .cyl-1 styles */
+.cyl-1 {
+  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:10em;
+  height:1em;
+  margin:-0.5em 0 0 -5em;
+}
+.cyl-1 .tp, .cyl-1 .bm {
+  width:10em;
+  height:10em;
+}
+.cyl-1 .side1 {
+  width:2.3074347439014993em;
+  height:1em;
+}
+.cyl-1 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 4.975em);
+}
+.cyl-1 .face1, .cyl-1 .side1 {
+  background-color:#5e5d5e;
+}
+/* .cyl-2 styles */
+.cyl-2 {
+  transform:translate3D(0em, -1em, 0.0625em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:6em;
+  height:1em;
+  margin:-0.5em 0 0 -3em;
+}
+.cyl-2 .tp, .cyl-2 .bm {
+  width:6em;
+  height:6em;
+}
+.cyl-2 .side1 {
+  width:1.3944608463408996em;
+  height:1em;
+}
+.cyl-2 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-2 .face1, .cyl-2 .side1 {
+  background-color:#cdccce;
+}
+
+
 
 	</style>
 
+
+<head>
+	<title>Still Life 2</title>
 </head>
-
 <body>
+<div id="tridiv">
+  <div class="scene" style="-webkit-transform:rotateX(-36deg) rotateY(-43deg); -moz-transform:rotateX(-36deg) rotateY(-43deg); -ms-transform:rotateX(-36deg) rotateY(-43deg); transform:rotateX(-36deg) rotateY(-43deg); ">
+    <div class="shape cuboid-1 catbook">
+      <div class="face ft">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.118);"></div>
+      </div>
+      <div class="face bk">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.118);"></div>
+      </div>
+      <div class="face rt">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.118);"></div>
+      </div>
+      <div class="face lt">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.118);"></div>
+      </div>
+      <div class="face bm">
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.118);"></div>
+      </div>
 
-    <div class="canvas">
 
-        <!-- put your still life here -->
-        <div class="circle"> </div>
-        <div class="circle1"> </div>
-        <div class="circle2"> </div>
-        <div class="circle3"> </div>
-        <div class="circle4"> </div>
-        <div class="circle5"> </div>
-        <div class="circle6"> </div>
-        <div class="circle7"> </div>
-        <div class="circle8"> </div>
-        <div class="circle9"> </div>
-        <div class="circle10"> </div>
-        <div class="circle11"> </div>
-        <div class="circle12"> </div>
-        <div class="circle13"> </div>
-        <div class="circle14"> </div>
-        <div class="circle15"> </div>
-        <div class="circle16"> </div>
-        <div class="circle17"> </div>
-        <div class="circle18"> </div>
-        <div class="circle19"> </div>
-        <div class="circle20"> </div>
-        <div class="trapezoid"> </div>
-        <div class="trapezoid1"> </div>
-        <div class="square"> </div>
-        <div class="square1"> </div>
-        <div class="square2"> </div>
-        <div class="square3"> </div>
-        <div class="square4"> </div>
-        <div class="square5"> </div>
-        <div class="square6"> </div>
-        <div class="trapezoid2"> </div>
-        <div class="trapezoid3"> </div>
-        <div class="square7"> </div>
-        <div class="square8"> </div>
-        <div class="square9"> </div>
-        <div class="square10"> </div>
-        <div class="square11"> </div>
-        <div class="square12"> </div>
-        <div class="square13"> </div>
-        <div class="square14"> </div>
-        <div class="trapezoid4"> </div>
-        <div class="circle22"> </div>
-        <div class="square15"> </div>
-        <div class="circle23"> </div>
-        <div class="eyes1"></div>
-           <div class="eyes2"></div>
-        <div class="square16"> </div>
-        <div class="square17"> </div>
-        <div class="square18"> </div>
-        <div class="square19"> </div>
-        <div class="square20"> </div>
-        <div class="square21"> </div>
-        <div class="square22"> </div>
-        <div class="circle24"> </div>
-        <div class="circle25"> </div>
-        <div class="square23"> </div>
+      <div class="face tp">
 
+        <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.118);">
+        	
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div id="cat">
+
+		<div id="ears">
+
+				<div class="ear"></div>
+				<div class="ear"></div>
+
+		</div>
+
+		<div id="head">
+
+			<div id="eyes">
+
+				<div class="eye">
+					<div class="pupil">
+						<div class="pupil_ref"></div>
+					</div>
+				</div>
+				<div class="eye">
+					<div class="pupil">
+						<div class="pupil_ref"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="nose"></div>
+			<div id="baffi_dx">
+					<div class="baffo"></div>
+					<div class="baffo"></div>
+					<div class="baffo"></div>
+			</div>
+
+			<div id="baffi_sx">
+					<div class="baffo"></div>
+					<div class="baffo"></div>
+					<div class="baffo"></div>
+			</div>
+		
+
+		</div>
+
+		
+		<div class="catbody2">
+				<div class="cattail"></div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="ballholder">
+
+<div class="ball"></div>
+<div class="ball"></div>
+<div class="ball"></div>
+<div class="ball"></div>
+<div class="ball"></div>
+<div class="ball"></div>
+<div class="ball"></div>
+</div>
+
+<div id="tridiv1">
+  <div class="scene1" style="-webkit-transform:rotateX(-387deg) rotateY(65deg); -moz-transform:rotateX(-387deg) rotateY(65deg); -ms-transform:rotateX(-387deg) rotateY(65deg); transform:rotateX(-387deg) rotateY(65deg); ">
+    <div class="shape1 cylinder-1 cyl-1">
+      <div class="face1 bm">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 tp">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 side1 s0">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.208);"></div>
+      </div>
+      <div class="face1 side1 s1">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.1);"></div>
+      </div>
+      <div class="face1 side1 s2">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.016);"></div>
+      </div>
+      <div class="face1 side1 s3">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 side1 s4">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.063);"></div>
+      </div>
+      <div class="face1 side1 s5">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.165);"></div>
+      </div>
+      <div class="face1 side1 s6">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.28);"></div>
+      </div>
+      <div class="face1 side1 s7">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.392);"></div>
+      </div>
+      <div class="face1 side1 s8">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.498);"></div>
+      </div>
+      <div class="face1 side1 s9">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.584);"></div>
+      </div>
+      <div class="face1 side1 s10">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 side1 s11">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.537);"></div>
+      </div>
+      <div class="face1 side1 s12">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.435);"></div>
+      </div>
+      <div class="face1 side1 s13">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.32);"></div>
+      </div>
+    </div>
+    <div class="shape1 cylinder-2 cyl-2">
+      <div class="face1 bm">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 tp">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 side1 s0">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.208);"></div>
+      </div>
+      <div class="face1 side1 s1">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.1);"></div>
+      </div>
+      <div class="face1 side1 s2">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.016);"></div>
+      </div>
+      <div class="face1 side1 s3">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 side1 s4">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.063);"></div>
+      </div>
+      <div class="face1 side1 s5">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.165);"></div>
+      </div>
+      <div class="face1 side1 s6">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.28);"></div>
+      </div>
+      <div class="face1 side1 s7">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.392);"></div>
+      </div>
+      <div class="face1 side1 s8">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.498);"></div>
+      </div>
+      <div class="face1 side1 s9">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.584);"></div>
+      </div>
+      <div class="face1 side1 s10">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.267);"></div>
+      </div>
+      <div class="face1 side1 s11">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.537);"></div>
+      </div>
+      <div class="face1 side1 s12">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.435);"></div>
+      </div>
+      <div class="face1 side1 s13">
+        <div class="photon-shader1" style="background-color: rgba(0, 0, 0, 0.32);"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
-
 </html>
